@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Calculator – Fast & Accurate Calculator Tool</title>
+    <meta name="description" content="Use our free online calculator for quick and accurate calculations. Perform addition, subtraction, multiplication, division, percentages, and more instantly.">
+    <meta name="keywords" content="online calculator, free calculator, simple calculator, percentage calculator, math calculator, fast calculator, accurate calculator, calculator tool">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Toolshouse.online">
+    <link rel="canonical" href="https://www.toolshouse.online/calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Online Calculator – Fast & Accurate Calculator Tool">
+    <meta property="og:description" content="Use our free online calculator for quick and accurate calculations. Perform addition, subtraction, multiplication, division, percentages, and more instantly.">
+    <meta property="og:url" content="https://www.toolshouse.online/calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toolshouse.online">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Calculator – Fast & Accurate Calculator Tool">
+    <meta name="twitter:description" content="Use our free online calculator for quick and accurate calculations.">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Online Calculator",
+        "url": "https://www.toolshouse.online/calculator.html",
+        "description": "Free online calculator for quick and accurate calculations. Perform addition, subtraction, multiplication, division, percentages, and more instantly.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Toolshouse.online",
+            "url": "https://www.toolshouse.online"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is this calculator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, it is completely free to use with no hidden charges or signup required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use it on mobile?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, it works perfectly on smartphones, tablets, and desktops with a responsive design."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to register?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, registration is not required. Just open and start calculating."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it support keyboard input?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can use your keyboard for number input and basic operations like +, -, *, /, Enter, and Backspace."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0c0c0c;
+            --bg-elevated: #151515;
+            --card: #1a1a1a;
+            --card-hover: #222222;
+            --border: #2a2a2a;
+            --fg: #f0ede8;
+            --fg-muted: #8a8580;
+            --accent: #e8913a;
+            --accent-glow: rgba(232, 145, 58, 0.25);
+            --accent-soft: rgba(232, 145, 58, 0.08);
+            --operator: #c46f1f;
+            --danger: #e05252;
+            --success: #4ade80;
+            --calc-btn: #1e1e1e;
+            --calc-btn-hover: #282828;
+            --calc-btn-active: #333333;
+            --radius: 14px;
+            --radius-sm: 10px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* === 背景氛围 === */
+        .bg-atmosphere {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+            animation: blobFloat 20s ease-in-out infinite;
+        }
+
+        .bg-blob:nth-child(1) {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: -10%; left: -5%;
+            animation-delay: 0s;
+        }
+
+        .bg-blob:nth-child(2) {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #c46f1f 0%, transparent 70%);
+            bottom: 10%; right: -8%;
+            animation-delay: -7s;
+            animation-duration: 25s;
+        }
+
+        .bg-blob:nth-child(3) {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, #f0a050 0%, transparent 70%);
+            top: 50%; left: 40%;
+            animation-delay: -14s;
+            animation-duration: 22s;
+            opacity: 0.15;
+        }
+
+        @keyframes blobFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(40px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(30px, 40px) scale(1.03); }
+        }
+
+        /* === 网格纹理 === */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                linear-gradient(rgba(232,145,58,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232,145,58,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* === 导航栏 === */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(12,12,12,0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(12,12,12,0.92);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--fg);
+        }
+
+        .nav-brand-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--operator));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .nav-brand-text {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-brand-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--fg);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0; right: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .nav-home-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(232,145,58,0.2);
+            border-radius: 8px;
+            color: var(--accent) !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            transition: all 0.2s !important;
+        }
+
+        .nav-home-btn:hover {
+            background: rgba(232,145,58,0.15) !important;
+            border-color: rgba(232,145,58,0.4) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--fg);
+            font-size: 22px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* === 主内容 === */
+        main {
+            position: relative;
+            z-index: 1;
+            padding-top: 64px;
+        }
+
+        /* === Hero 区域 === */
+        .hero {
+            padding: 60px 24px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(232,145,58,0.15);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 24px;
+            animation: fadeInDown 0.6s ease;
+        }
+
+        .hero-badge i {
+            font-size: 11px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 58px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+            animation: fadeInDown 0.6s ease 0.1s both;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), #f0a050);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--fg-muted);
+            max-width: 560px;
+            margin: 0 auto;
+            animation: fadeInDown 0.6s ease 0.2s both;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === 计算器容器 === */
+        .calculator-section {
+            padding: 20px 24px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.7s ease 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === 计算器主体 === */
+        .calculator {
+            width: 380px;
+            max-width: 100%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow), 0 0 60px rgba(232,145,58,0.06);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .calculator:hover {
+            box-shadow: var(--shadow), 0 0 80px rgba(232,145,58,0.1);
+        }
+
+        /* 显示屏 */
+        .calc-display {
+            padding: 28px 24px 20px;
+            background: linear-gradient(180deg, #1f1f1f 0%, var(--card) 100%);
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-display::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232,145,58,0.3), transparent);
+        }
+
+        .calc-expression {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--fg-muted);
+            text-align: right;
+            min-height: 22px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-right: 2px;
+            transition: color 0.2s;
+        }
+
+        .calc-result {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--fg);
+            text-align: right;
+            line-height: 1.2;
+            margin-top: 6px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-right: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .calc-result.shrink {
+            font-size: 28px;
+        }
+
+        .calc-result.error {
+            color: var(--danger);
+            font-size: 24px;
+        }
+
+        /* 按钮网格 */
+        .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            padding: 8px;
+            background: #111;
+        }
+
+        .calc-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            border: none;
+            background: var(--calc-btn);
+            color: var(--fg);
+            padding: 18px 0;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .calc-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.08), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .calc-btn:hover::after {
+            opacity: 1;
+        }
+
+        .calc-btn:hover {
+            background: var(--calc-btn-hover);
+        }
+
+        .calc-btn:active {
+            background: var(--calc-btn-active);
+            transform: scale(0.96);
+        }
+
+        .calc-btn.pressed {
+            background: var(--calc-btn-active);
+            transform: scale(0.96);
+        }
+
+        /* 功能按钮 */
+        .calc-btn.fn {
+            color: var(--accent);
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .calc-btn.fn:hover {
+            background: var(--accent-soft);
+        }
+
+        .calc-btn.danger {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .calc-btn.danger:hover {
+            background: rgba(224,82,82,0.1);
+        }
+
+        /* 运算符按钮 */
+        .calc-btn.op {
+            background: linear-gradient(180deg, rgba(232,145,58,0.15), rgba(196,111,31,0.1));
+            color: var(--accent);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .calc-btn.op:hover {
+            background: linear-gradient(180deg, rgba(232,145,58,0.25), rgba(196,111,31,0.18));
+        }
+
+        .calc-btn.op.active-op {
+            background: linear-gradient(180deg, var(--accent), var(--operator));
+            color: #fff;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* 等号按钮 */
+        .calc-btn.equals {
+            background: linear-gradient(180deg, var(--accent), var(--operator));
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .calc-btn.equals:hover {
+            background: linear-gradient(180deg, #f0a050, var(--accent));
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+
+        .calc-btn.equals:active {
+            background: linear-gradient(180deg, var(--operator), #a05a15);
+        }
+
+        /* 零按钮占两列 */
+        .calc-btn.zero {
+            grid-column: span 2;
+            text-align: left;
+            padding-left: 28px;
+        }
+
+        /* === 历史记录面板 === */
+        .history-panel {
+            width: 260px;
+            max-width: 100%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-height: 560px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .history-header {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .history-header h3 {
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .history-header h3 i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .history-clear-btn {
+            background: none;
+            border: none;
+            color: var(--fg-muted);
+            font-size: 13px;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .history-clear-btn:hover {
+            color: var(--danger);
+            background: rgba(224,82,82,0.1);
+        }
+
+        .history-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .history-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .history-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .history-list::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .history-item {
+            padding: 12px 14px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background 0.2s;
+            animation: historySlideIn 0.3s ease;
+        }
+
+        @keyframes historySlideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .history-item:hover {
+            background: var(--card-hover);
+        }
+
+        .history-item-expr {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--fg-muted);
+            margin-bottom: 3px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .history-item-result {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+        }
+
+        .history-empty {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--fg-muted);
+            font-size: 13px;
+        }
+
+        .history-empty i {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.4;
+        }
+
+        /* === 键盘提示 === */
+        .keyboard-hint {
+            text-align: center;
+            padding: 12px 24px;
+            color: var(--fg-muted);
+            font-size: 12px;
+            max-width: 900px;
+            margin: -20px auto 0;
+            animation: fadeInUp 0.7s ease 0.5s both;
+        }
+
+        .keyboard-hint kbd {
+            display: inline-block;
+            padding: 2px 7px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            margin: 0 1px;
+        }
+
+        /* === 功能特性 === */
+        .features-section {
+            padding: 80px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
+
+        .section-desc {
+            color: var(--fg-muted);
+            font-size: 16px;
+            max-width: 560px;
+            margin-bottom: 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(232,145,58,0.2);
+            background: var(--card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: var(--fg-muted);
+            line-height: 1.6;
+        }
+
+        /* === SEO 内容区 === */
+        .seo-content {
+            padding: 0 24px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .seo-content h2 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin-bottom: 16px;
+        }
+
+        .seo-content p {
+            color: var(--fg-muted);
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .seo-content strong {
+            color: var(--fg);
+        }
+
+        /* === FAQ 区域 === */
+        .faq-section {
+            padding: 0 24px 80px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            overflow: hidden;
+            background: var(--card);
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(232,145,58,0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            color: var(--fg);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-question i {
+            color: var(--fg-muted);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            color: var(--fg-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* === 关键词标签 === */
+        .keywords-section {
+            padding: 0 24px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .keywords-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .keyword-tag {
+            padding: 8px 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--fg-muted);
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .keyword-tag:hover {
+            border-color: rgba(232,145,58,0.3);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* === Footer === */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-icon {
+            width: 30px; height: 30px;
+            background: linear-gradient(135deg, var(--accent), var(--operator));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            color: #fff;
+        }
+
+        .footer-brand span {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .footer-brand span em {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        footer p {
+            color: var(--fg-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* === Toast 通知 === */
+        .toast-container {
+            position: fixed;
+            top: 80px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .toast {
+            padding: 12px 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            color: var(--fg);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            animation: toastIn 0.3s ease, toastOut 0.3s ease 2.5s forwards;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast i {
+            color: var(--success);
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes toastOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(40px); }
+        }
+
+        /* === 滚动动画 === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === 响应式 === */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0; right: 0;
+                background: rgba(12,12,12,0.95);
+                backdrop-filter: blur(20px);
+                padding: 16px 24px;
+                flex-direction: column;
+                border-bottom: 1px solid var(--border);
+                gap: 12px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .calculator-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .history-panel {
+                width: 380px;
+                max-height: 300px;
+            }
+
+            .hero {
+                padding: 40px 20px 30px;
+            }
+
+            .calc-result {
+                font-size: 36px;
+            }
+
+            .calc-btn {
+                padding: 16px 0;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .calculator {
+                width: 100%;
+                border-radius: 16px;
+            }
+
+            .history-panel {
+                width: 100%;
+            }
+
+            .calc-result {
+                font-size: 30px;
+            }
+
+            .calc-btn {
+                padding: 14px 0;
+                font-size: 16px;
+            }
+        }
+
+        /* === 无障碍 === */
+        .calc-btn:focus-visible,
+        .faq-question:focus-visible,
+        .history-clear-btn:focus-visible,
+        .mobile-toggle:focus-visible,
+        .nav-home-btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* === 减弱动画偏好 === */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 背景氛围层 -->
+    <div class="bg-atmosphere" aria-hidden="true">
+        <div class="bg-blob"></div>
+        <div class="bg-blob"></div>
+        <div class="bg-blob"></div>
+    </div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- Toast 容器 -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- 导航栏 -->
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="https://www.toolshouse.online/" class="nav-brand" aria-label="Toolshouse Home">
+            <div class="nav-brand-icon">T</div>
+            <div class="nav-brand-text">Tools<span>house</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://www.toolshouse.online/" class="nav-home-btn"><i class="fas fa-arrow-left"></i> All Tools</a></li>
+            <li><a href="#calculator" class="active">Calculator</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="calculator">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                100% Free — No Registration Required
+            </div>
+            <h1>Free Online <span class="highlight">Calculator</span></h1>
+            <p>Perform quick and accurate calculations — addition, subtraction, multiplication, division, percentages, and more. Works instantly on any device.</p>
+        </section>
+
+        <!-- 计算器 + 历史记录 -->
+        <section class="calculator-section" aria-label="Calculator tool">
+            <div class="calculator" role="application" aria-label="Calculator">
+                <!-- 显示屏 -->
+                <div class="calc-display">
+                    <div class="calc-expression" id="calcExpression" aria-live="polite"></div>
+                    <div class="calc-result" id="calcResult" aria-live="assertive">0</div>
+                </div>
+                <!-- 按钮区 -->
+                <div class="calc-buttons">
+                    <button class="calc-btn danger" data-action="clear" aria-label="Clear all">AC</button>
+                    <button class="calc-btn fn" data-action="toggle-sign" aria-label="Toggle sign">+/&minus;</button>
+                    <button class="calc-btn fn" data-action="percent" aria-label="Percent">%</button>
+                    <button class="calc-btn op" data-action="operator" data-value="/" aria-label="Divide">&divide;</button>
+
+                    <button class="calc-btn" data-action="number" data-value="7">7</button>
+                    <button class="calc-btn" data-action="number" data-value="8">8</button>
+                    <button class="calc-btn" data-action="number" data-value="9">9</button>
+                    <button class="calc-btn op" data-action="operator" data-value="*" aria-label="Multiply">&times;</button>
+
+                    <button class="calc-btn" data-action="number" data-value="4">4</button>
+                    <button class="calc-btn" data-action="number" data-value="5">5</button>
+                    <button class="calc-btn" data-action="number" data-value="6">6</button>
+                    <button class="calc-btn op" data-action="operator" data-value="-" aria-label="Subtract">&minus;</button>
+
+                    <button class="calc-btn" data-action="number" data-value="1">1</button>
+                    <button class="calc-btn" data-action="number" data-value="2">2</button>
+                    <button class="calc-btn" data-action="number" data-value="3">3</button>
+                    <button class="calc-btn op" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+                    <button class="calc-btn zero" data-action="number" data-value="0">0</button>
+                    <button class="calc-btn" data-action="decimal" aria-label="Decimal point">.</button>
+                    <button class="calc-btn equals" data-action="equals" aria-label="Equals">=</button>
+                </div>
+            </div>
+
+            <!-- 历史记录 -->
+            <div class="history-panel" aria-label="Calculation history">
+                <div class="history-header">
+                    <h3><i class="fas fa-clock-rotate-left"></i> History</h3>
+                    <button class="history-clear-btn" id="clearHistory" aria-label="Clear history">Clear</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="history-empty">
+                        <i class="fas fa-calculator"></i>
+                        Your calculation history will appear here
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 键盘提示 -->
+        <div class="keyboard-hint">
+            <i class="fas fa-keyboard" style="margin-right: 4px;"></i>
+            Keyboard supported: <kbd>0</kbd>-<kbd>9</kbd> <kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> <kbd>%</kbd> <kbd>.</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd> <kbd>Backspace</kbd>
+        </div>
+
+        <!-- 功能特性 -->
+        <section class="features-section reveal" id="features" aria-label="Features">
+            <div class="section-label"><i class="fas fa-sparkles"></i> Why Choose This Calculator</div>
+            <h2 class="section-title">Built for Speed, Designed for Everyone</h2>
+            <p class="section-desc">Whether you're a student solving math problems, a professional crunching numbers, or just splitting a bill — this calculator delivers instant, accurate results every time.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Lightning Fast</h3>
+                    <p>Instant calculations with zero lag. Results appear as you type, no waiting required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h3>Mobile-Friendly</h3>
+                    <p>Responsive design that works perfectly on smartphones, tablets, laptops, and desktops.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-percent"></i></div>
+                    <h3>Percentage Mode</h3>
+                    <p>Calculate percentages instantly — tips, discounts, tax rates, and more with one tap.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Privacy First</h3>
+                    <p>All calculations happen locally in your browser. No data is sent to any server, ever.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Keyboard Support</h3>
+                    <p>Full keyboard integration for power users — type numbers and operators without touching the mouse.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                    <h3>Calculation History</h3>
+                    <p>Every calculation is saved automatically. Click any past result to reuse it instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Completely Free</h3>
+                    <p>No hidden charges, no premium tiers, no signup walls. Just open and calculate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-universal-access"></i></div>
+                    <h3>Accessible</h3>
+                    <p>Screen reader friendly, keyboard navigable, and respects reduced motion preferences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO 文本内容 -->
+        <section class="seo-content reveal" aria-label="About this calculator">
+            <h2>The Most Reliable Free Online Calculator</h2>
+            <p>
+                Looking for a reliable <strong>online calculator</strong>? Our <strong>Calculator Tool</strong> is designed for students, professionals, business owners, and everyday users who need quick, accurate results without installing any app or extension.
+            </p>
+            <p>
+                Calculate <strong>percentages</strong>, additions, subtractions, multiplications, and divisions instantly. The tool is lightweight, responsive, and optimized for both desktop and mobile devices. Whether you're calculating a tip at a restaurant, working through homework problems, or estimating project costs — this <strong>free calculator</strong> handles it all.
+            </p>
+            <p>
+                Unlike many calculator websites that are cluttered with ads or require account creation, Toolshouse.online offers a clean, distraction-free experience. Your <strong>calculation history</strong> is stored locally in your browser session, so you can refer back to previous results without worrying about privacy.
+            </p>
+            <p>
+                This <strong>math calculator</strong> supports all basic arithmetic operations including percentage calculations, sign toggling, and decimal precision. It's the perfect <strong>online math tool</strong> for anyone who needs a fast, accurate calculator on the go.
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section reveal" id="faq" aria-label="Frequently Asked Questions">
+            <div class="section-label"><i class="fas fa-circle-question"></i> FAQ</div>
+            <h2 class="section-title" style="margin-bottom: 32px;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Is this calculator free?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes, it is completely free to use with no hidden charges, no premium plans, and no signup required. Just open the page and start calculating.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Can I use it on mobile?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes, it works perfectly on smartphones, tablets, and desktops. The calculator has a fully responsive design that adapts to any screen size.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Do I need to register?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No, registration is not required. There are no accounts, no logins, and no personal data collected. Just open and calculate.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Does it support keyboard input?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes, you can use your keyboard for number input and basic operations. Press 0-9 for digits, +, -, *, / for operators, Enter for equals, Backspace to delete, and Escape to clear.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Is my data private?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Absolutely. All calculations happen locally in your browser. No data is sent to any server. Your calculation history is stored only in your current browser session and disappears when you close the tab.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How do I calculate percentages?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Enter a number and press the % button to convert it to a percentage (divides by 100). For example, entering 25 and pressing % gives 0.25. You can also combine it with operations — like 200 + 10% to calculate a 10% increase.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关键词标签 -->
+        <section class="keywords-section reveal" aria-label="Related search terms">
+            <div class="section-label"><i class="fas fa-tags"></i> Related Searches</div>
+            <h2 class="section-title" style="font-size: 24px;">Popular Calculator Searches</h2>
+            <div class="keywords-wrap">
+                <span class="keyword-tag">Free Online Calculator</span>
+                <span class="keyword-tag">Percentage Calculator</span>
+                <span class="keyword-tag">Math Calculator</span>
+                <span class="keyword-tag">Basic Calculator</span>
+                <span class="keyword-tag">Scientific Calculator</span>
+                <span class="keyword-tag">Online Math Tool</span>
+                <span class="keyword-tag">Fast Calculator</span>
+                <span class="keyword-tag">Accurate Calculator</span>
+                <span class="keyword-tag">Mobile Calculator</span>
+                <span class="keyword-tag">Calculator App</span>
+                <span class="keyword-tag">Quick Calculator</span>
+                <span class="keyword-tag">Simple Calculator</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            <div class="footer-brand-icon">T</div>
+            <span>Tools<em>house</em>.online</span>
+        </div>
+        <p>Free online tools for everyone. <a href="https://www.toolshouse.online/">Explore all tools</a></p>
+        <p style="margin-top: 8px; font-size: 12px; opacity: 0.6;">&copy; 2025 Toolshouse.online — All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // === 计算器核心逻辑 ===
+        const calcState = {
+            currentInput: '0',       // 当前输入的数字
+            previousInput: '',       // 上一个操作数
+            operator: null,          // 当前运算符
+            shouldResetInput: false, // 是否需要重置输入
+            expression: '',          // 表达式显示
+            history: [],             // 历史记录
+            justCalculated: false    // 刚完成计算标志
+        };
+
+        const expressionEl = document.getElementById('calcExpression');
+        const resultEl = document.getElementById('calcResult');
+        const historyList = document.getElementById('historyList');
+        const clearHistoryBtn = document.getElementById('clearHistory');
+
+        // 运算符映射（内部符号 → 显示符号）
+        const opSymbols = { '+': '+', '-': '−', '*': '×', '/': '÷' };
+
+        // 更新显示
+        function updateDisplay() {
+            expressionEl.textContent = calcState.expression;
+            resultEl.textContent = formatNumber(calcState.currentInput);
+
+            // 长数字自动缩小
+            if (calcState.currentInput.length > 10) {
+                resultEl.classList.add('shrink');
+            } else {
+                resultEl.classList.remove('shrink');
+            }
+            resultEl.classList.remove('error');
+        }
+
+        // 格式化数字显示（添加千位分隔符）
+        function formatNumber(numStr) {
+            if (numStr === 'Error' || numStr === 'Infinity' || numStr === '-Infinity' || numStr === 'NaN') {
+                resultEl.classList.add('error');
+                return 'Error';
+            }
+            // 分离整数和小数部分
+            const parts = numStr.split('.');
+            let intPart = parts[0];
+            const decPart = parts.length > 1 ? '.' + parts[1] : '';
+            // 处理负号
+            let negative = false;
+            if (intPart.startsWith('-')) {
+                negative = true;
+                intPart = intPart.substring(1);
+            }
+            // 添加千位分隔符
+            intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            return (negative ? '-' : '') + intPart + decPart;
+        }
+
+        // 输入数字
+        function inputNumber(num) {
+            if (calcState.justCalculated && !calcState.operator) {
+                // 计算完成后输入新数字，重新开始
+                calcState.currentInput = '0';
+                calcState.expression = '';
+                calcState.justCalculated = false;
+            }
+
+            if (calcState.shouldResetInput) {
+                calcState.currentInput = '0';
+                calcState.shouldResetInput = false;
+            }
+
+            // 限制输入长度
+            if (calcState.currentInput.replace(/[^0-9]/g, '').length >= 15) return;
+
+            if (calcState.currentInput === '0' && num !== '.') {
+                calcState.currentInput = num;
+            } else if (calcState.currentInput === '-0') {
+                calcState.currentInput = '-' + num;
+            } else {
+                calcState.currentInput += num;
+            }
+            updateDisplay();
+        }
+
+        // 输入小数点
+        function inputDecimal() {
+            if (calcState.justCalculated && !calcState.operator) {
+                calcState.currentInput = '0';
+                calcState.expression = '';
+                calcState.justCalculated = false;
+            }
+
+            if (calcState.shouldResetInput) {
+                calcState.currentInput = '0';
+                calcState.shouldResetInput = false;
+            }
+
+            if (!calcState.currentInput.includes('.')) {
+                calcState.currentInput += '.';
+            }
+            updateDisplay();
+        }
+
+        // 选择运算符
+        function selectOperator(op) {
+            calcState.justCalculated = false;
+
+            if (calcState.operator && !calcState.shouldResetInput) {
+                // 链式计算
+                calculate(false);
+            }
+
+            calcState.previousInput = calcState.currentInput;
+            calcState.operator = op;
+            calcState.shouldResetInput = true;
+            calcState.expression = formatNumber(calcState.previousInput) + ' ' + opSymbols[op];
+
+            // 高亮当前运算符按钮
+            highlightOperator(op);
+            updateDisplay();
+        }
+
+        // 执行计算
+        function calculate(addToHistory) {
+            if (!calcState.operator || calcState.previousInput === '') return;
+
+            const prev = parseFloat(calcState.previousInput);
+            const current = parseFloat(calcState.currentInput);
+            let result;
+
+            switch (calcState.operator) {
+                case '+': result = prev + current; break;
+                case '-': result = prev - current; break;
+                case '*': result = prev * current; break;
+                case '/':
+                    if (current === 0) {
+                        calcState.currentInput = 'Error';
+                        calcState.expression = formatNumber(calcState.previousInput) + ' ' + opSymbols[calcState.operator] + ' ' + formatNumber(calcState.currentInput) + ' =';
+                        calcState.operator = null;
+                        calcState.previousInput = '';
+                        calcState.shouldResetInput = true;
+                        calcState.justCalculated = true;
+                        clearOperatorHighlight();
+                        updateDisplay();
+                        return;
+                    }
+                    result = prev / current;
+                    break;
+                default: return;
+            }
+
+            // 处理浮点精度问题
+            result = parseFloat(result.toPrecision(12));
+
+            const expr = formatNumber(calcState.previousInput) + ' ' + opSymbols[calcState.operator] + ' ' + formatNumber(String(current));
+            const resultStr = String(result);
+
+            if (addToHistory !== false) {
+                calcState.expression = expr + ' =';
+                addHistory(expr, resultStr);
+            }
+
+            calcState.currentInput = resultStr;
+            calcState.operator = null;
+            calcState.previousInput = '';
+            calcState.shouldResetInput = true;
+            calcState.justCalculated = true;
+
+            clearOperatorHighlight();
+            updateDisplay();
+        }
+
+        // 百分比
+        function percent() {
+            const current = parseFloat(calcState.currentInput);
+            const result = current / 100;
+            calcState.currentInput = String(parseFloat(result.toPrecision(12)));
+            calcState.justCalculated = true;
+            updateDisplay();
+        }
+
+        // 切换正负号
+        function toggleSign() {
+            if (calcState.currentInput === '0' || calcState.currentInput === 'Error') return;
+            if (calcState.currentInput.startsWith('-')) {
+                calcState.currentInput = calcState.currentInput.substring(1);
+            } else {
+                calcState.currentInput = '-' + calcState.currentInput;
+            }
+            updateDisplay();
+        }
+
+        // 清除（AC）
+        function clearAll() {
+            calcState.currentInput = '0';
+            calcState.previousInput = '';
+            calcState.operator = null;
+            calcState.shouldResetInput = false;
+            calcState.expression = '';
+            calcState.justCalculated = false;
+            clearOperatorHighlight();
+            updateDisplay();
+        }
+
+        // 退格
+        function backspace() {
+            if (calcState.justCalculated || calcState.shouldResetInput) return;
+            if (calcState.currentInput.length === 1 || (calcState.currentInput.length === 2 && calcState.currentInput.startsWith('-'))) {
+                calcState.currentInput = '0';
+            } else {
+                calcState.currentInput = calcState.currentInput.slice(0, -1);
+            }
+            updateDisplay();
+        }
+
+        // 运算符按钮高亮
+        function highlightOperator(op) {
+            clearOperatorHighlight();
+            const opBtns = document.querySelectorAll('.calc-btn.op');
+            opBtns.forEach(btn => {
+                if (btn.dataset.value === op) {
+                    btn.classList.add('active-op');
+                }
+            });
+        }
+
+        function clearOperatorHighlight() {
+            document.querySelectorAll('.calc-btn.op').forEach(btn => btn.classList.remove('active-op'));
+        }
+
+        // === 历史记录 ===
+        function addHistory(expr, result) {
+            calcState.history.unshift({ expr, result });
+            if (calcState.history.length > 50) calcState.history.pop();
+            renderHistory();
+        }
+
+        function renderHistory() {
+            if (calcState.history.length === 0) {
+                historyList.innerHTML = '<div class="history-empty"><i class="fas fa-calculator"></i>Your calculation history will appear here</div>';
+                return;
+            }
+
+            historyList.innerHTML = calcState.history.map((item, i) => `
+                <div class="history-item" data-index="${i}" tabindex="0" role="button" aria-label="Use result ${item.result}">
+                    <div class="history-item-expr">${item.expr}</div>
+                    <div class="history-item-result">= ${formatNumber(item.result)}</div>
+                </div>
+            `).join('');
+
+            // 绑定点击事件
+            historyList.querySelectorAll('.history-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const idx = parseInt(item.dataset.index);
+                    calcState.currentInput = calcState.history[idx].result;
+                    calcState.shouldResetInput = true;
+                    calcState.justCalculated = true;
+                    updateDisplay();
+                    showToast('Result loaded');
+                });
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.click();
+                    }
+                });
+            });
+        }
+
+        clearHistoryBtn.addEventListener('click', () => {
+            calcState.history = [];
+            renderHistory();
+            showToast('History cleared');
+        });
+
+        // === 按钮点击处理 ===
+        document.querySelectorAll('.calc-btn').forEach(btn => {
+            // 鼠标跟踪光效
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                btn.style.setProperty('--x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+                btn.style.setProperty('--y', ((e.clientY - rect.top) / rect.height * 100) + '%');
+            });
+
+            btn.addEventListener('click', () => {
+                const action = btn.dataset.action;
+                const value = btn.dataset.value;
+
+                // 按下动效
+                btn.classList.add('pressed');
+                setTimeout(() => btn.classList.remove('pressed'), 120);
+
+                switch (action) {
+                    case 'number': inputNumber(value); break;
+                    case 'decimal': inputDecimal(); break;
+                    case 'operator': selectOperator(value); break;
+                    case 'equals': calculate(); break;
+                    case 'percent': percent(); break;
+                    case 'toggle-sign': toggleSign(); break;
+                    case 'clear': clearAll(); break;
+                }
+            });
+        });
+
+        // === 键盘支持 ===
+        document.addEventListener('keydown', (e) => {
+            // 如果焦点在 FAQ 按钮等元素上，不拦截
+            if (e.target.tagName === 'BUTTON' && !e.target.classList.contains('calc-btn')) return;
+
+            const key = e.key;
+
+            if (key >= '0' && key <= '9') {
+                e.preventDefault();
+                inputNumber(key);
+                flashButton(`[data-value="${key}"][data-action="number"]`);
+            } else if (key === '.') {
+                e.preventDefault();
+                inputDecimal();
+                flashButton('[data-action="decimal"]');
+            } else if (key === '+') {
+                e.preventDefault();
+                selectOperator('+');
+                flashButton('[data-value="+"]');
+            } else if (key === '-') {
+                e.preventDefault();
+                selectOperator('-');
+                flashButton('[data-value="-"]');
+            } else if (key === '*') {
+                e.preventDefault();
+                selectOperator('*');
+                flashButton('[data-value="*"]');
+            } else if (key === '/') {
+                e.preventDefault();
+                selectOperator('/');
+                flashButton('[data-value="/"]');
+            } else if (key === '%') {
+                e.preventDefault();
+                percent();
+                flashButton('[data-action="percent"]');
+            } else if (key === 'Enter' || key === '=') {
+                e.preventDefault();
+                calculate();
+                flashButton('[data-action="equals"]');
+            } else if (key === 'Escape') {
+                e.preventDefault();
+                clearAll();
+                flashButton('[data-action="clear"]');
+            } else if (key === 'Backspace') {
+                e.preventDefault();
+                backspace();
+            }
+        });
+
+        // 键盘按下时闪烁对应按钮
+        function flashButton(selector) {
+            const btn = document.querySelector(selector);
+            if (btn) {
+                btn.classList.add('pressed');
+                setTimeout(() => btn.classList.remove('pressed'), 120);
+            }
+        }
+
+        // === Toast 通知 ===
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // === FAQ 手风琴 ===
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                // 关闭所有
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // 切换当前
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // === 移动端导航 ===
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('open')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // 点击导航链接后关闭菜单
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                mobileToggle.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+
+        // === 导航栏滚动效果 ===
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // === 滚动显示动画 ===
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === 初始化 ===
+        updateDisplay();
+
+    })();
+    </script>
+</body>
+</html>
