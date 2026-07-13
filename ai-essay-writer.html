@@ -15,7 +15,6 @@
 
     <link rel="canonical" href="https://aitoolshouse.online/">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Essay Writer Free Online | AI Tools House">
     <meta property="og:description" content="Generate high-quality essays up to 1000 words instantly with our free AI Essay Writer. No sign-up required. Trusted by millions worldwide.">
@@ -26,21 +25,20 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Essay Writer Free Online | AI Tools House">
     <meta name="twitter:description" content="Generate essays up to 1000 words instantly. Free AI writing tool. No sign-up.">
     <meta name="twitter:image" content="https://aitoolshouse.online/og-image.png">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Puter.js -->
     <script src="https://js.puter.com/v2/"></script>
-    <!-- Schema.org WebSite Structured Data -->
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -73,7 +71,6 @@
     }
     </script>
 
-    <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -123,7 +120,6 @@
     }
     </script>
 
-    <!-- Article Schema for Blog -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -148,7 +144,6 @@
     }
     </script>
 
-    <!-- SoftwareApplication Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -216,12 +211,9 @@
             overflow-x: hidden;
         }
 
-        /* ===== NAVBAR ===== */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             background: rgba(255,255,255,0.85);
             backdrop-filter: blur(20px);
@@ -252,15 +244,11 @@
             color: var(--green-700);
         }
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             background: linear-gradient(135deg, var(--green-400), var(--green-600));
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px;
             box-shadow: 0 4px 12px rgba(34,197,94,0.3);
         }
         .logo span { color: var(--gray-900); }
@@ -306,9 +294,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
+            top: 72px; left: 0; right: 0;
             background: white;
             border-bottom: 1px solid var(--gray-200);
             box-shadow: var(--shadow-xl);
@@ -328,7 +314,6 @@
         }
         .mobile-menu a:hover { background: var(--green-50); color: var(--green-700); }
 
-        /* ===== HERO ===== */
         .hero {
             padding: 140px 24px 80px;
             text-align: center;
@@ -339,11 +324,9 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -200px;
-            left: 50%;
+            top: -200px; left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
+            width: 800px; height: 800px;
             background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
@@ -407,8 +390,43 @@
             font-weight: 500;
             margin-top: 2px;
         }
+        .hero-cta-wrap {
+            animation: fadeInUp 0.6s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--green-500), var(--green-600));
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+            transition: all 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(34,197,94,0.4);
+        }
 
-        /* ===== AD SPACE ===== */
+        .powered-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+        .powered-badge img {
+            width: 16px; height: 16px;
+            border-radius: 4px;
+        }
+
         .ad-space {
             max-width: 728px;
             margin: 0 auto 40px;
@@ -428,7 +446,6 @@
             justify-content: center;
         }
 
-        /* ===== TOOL SECTION ===== */
         .tool-section {
             padding: 40px 24px 80px;
             max-width: 900px;
@@ -449,15 +466,11 @@
             gap: 14px;
         }
         .tool-header-icon {
-            width: 48px;
-            height: 48px;
+            width: 48px; height: 48px;
             background: linear-gradient(135deg, var(--green-400), var(--green-600));
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px;
             flex-shrink: 0;
         }
         .tool-header h2 {
@@ -520,21 +533,6 @@
             font-weight: 700;
             font-family: 'JetBrains Mono', monospace;
         }
-        .word-counter-bar {
-            width: 100%;
-            height: 4px;
-            background: var(--gray-100);
-            border-radius: 100px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .word-counter-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--green-400), var(--green-600));
-            border-radius: 100px;
-            transition: width 0.3s ease;
-            width: 0%;
-        }
         .generate-btn {
             width: 100%;
             padding: 16px;
@@ -564,8 +562,7 @@
             transform: none !important;
         }
         .generate-btn .spinner {
-            width: 20px;
-            height: 20px;
+            width: 20px; height: 20px;
             border: 3px solid rgba(255,255,255,0.3);
             border-top-color: white;
             border-radius: 50%;
@@ -577,7 +574,35 @@
         .generate-btn.loading .btn-loading-text { display: inline; }
         .btn-loading-text { display: none; }
 
-        /* Output */
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 10px 16px;
+            background: var(--green-50);
+            border: 1px solid var(--green-200);
+            border-radius: 10px;
+            font-size: 12px;
+            color: var(--green-700);
+            font-weight: 600;
+        }
+        .ai-status .dot {
+            width: 8px; height: 8px;
+            background: var(--green-500);
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        .ai-status.error {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #dc2626;
+        }
+        .ai-status.error .dot {
+            background: #dc2626;
+            animation: none;
+        }
+
         .output-area {
             margin-top: 24px;
             display: none;
@@ -588,13 +613,15 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .output-header h3 {
             font-size: 15px;
             font-weight: 700;
             color: var(--gray-700);
         }
-        .output-actions { display: flex; gap: 8px; }
+        .output-actions { display: flex; gap: 8px; flex-wrap: wrap; }
         .output-btn {
             padding: 8px 14px;
             border: 1px solid var(--gray-200);
@@ -635,7 +662,6 @@
             font-weight: 500;
         }
 
-        /* ===== HOW IT WORKS ===== */
         .section { padding: 80px 24px; }
         .section-alt { background: var(--green-50); }
         .section-header {
@@ -684,7 +710,6 @@
             padding: 32px 28px;
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
         }
         .step-card:hover {
             transform: translateY(-4px);
@@ -692,16 +717,13 @@
             border-color: var(--green-300);
         }
         .step-num {
-            width: 48px;
-            height: 48px;
+            width: 48px; height: 48px;
             background: linear-gradient(135deg, var(--green-400), var(--green-600));
             color: white;
             font-size: 20px;
             font-weight: 800;
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             margin: 0 auto 20px;
             box-shadow: 0 4px 12px rgba(34,197,94,0.25);
         }
@@ -716,8 +738,6 @@
             color: var(--gray-500);
             line-height: 1.7;
         }
-
-        /* ===== FEATURES ===== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -739,14 +759,11 @@
             box-shadow: var(--shadow-lg);
         }
         .feature-icon {
-            width: 44px;
-            height: 44px;
+            width: 44px; height: 44px;
             background: var(--green-50);
             border: 1px solid var(--green-100);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             color: var(--green-600);
             font-size: 22px;
             flex-shrink: 0;
@@ -762,8 +779,6 @@
             color: var(--gray-500);
             line-height: 1.6;
         }
-
-        /* ===== FAQ ===== */
         .faq-list {
             max-width: 760px;
             margin: 0 auto;
@@ -816,8 +831,6 @@
             color: var(--gray-500);
             line-height: 1.7;
         }
-
-        /* ===== BLOG ===== */
         .blog-content {
             max-width: 800px;
             margin: 0 auto;
@@ -884,8 +897,6 @@
             color: var(--gray-600);
             font-size: 15px;
         }
-
-        /* ===== BACKLINKS ===== */
         .backlinks-section {
             padding: 40px 24px;
             background: var(--gray-50);
@@ -929,8 +940,6 @@
             color: var(--green-700);
             background: var(--green-50);
         }
-
-        /* ===== FOOTER ===== */
         .footer {
             background: var(--gray-900);
             color: var(--gray-400);
@@ -985,13 +994,10 @@
         }
         .footer-social { display: flex; gap: 12px; }
         .footer-social a {
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             color: var(--gray-500);
             text-decoration: none;
             transition: all 0.2s;
@@ -1002,12 +1008,9 @@
             color: var(--green-400);
             background: rgba(34,197,94,0.1);
         }
-
-        /* ===== TOAST ===== */
         .toast {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 30px; right: 30px;
             background: var(--gray-900);
             color: white;
             padding: 14px 24px;
@@ -1025,8 +1028,8 @@
         }
         .toast.show { transform: translateY(0); opacity: 1; }
         .toast .toast-icon { color: var(--green-400); font-size: 18px; }
+        .toast.error .toast-icon { color: #f87171; }
 
-        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1038,9 +1041,9 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        @keyframes pulse-green {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
         }
         .animate-on-scroll {
             opacity: 0;
@@ -1052,7 +1055,6 @@
             transform: translateY(0);
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-toggle { display: block; }
@@ -1068,6 +1070,7 @@
             .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; }
             .output-actions { flex-wrap: wrap; }
+            .toast { left: 20px; right: 20px; bottom: 20px; }
         }
         @media (max-width: 480px) {
             .footer-inner { grid-template-columns: 1fr; }
@@ -1077,7 +1080,6 @@
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#" class="logo">
@@ -1100,7 +1102,6 @@
     </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#home" onclick="closeMobile()">Home</a>
     <a href="#tools" onclick="closeMobile()">Tools</a>
@@ -1109,7 +1110,6 @@
     <a href="#blog" onclick="closeMobile()">Blog</a>
 </div>
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="home">
     <div class="hero-badge">
         <iconify-icon icon="lucide:sparkles"></iconify-icon>
@@ -1117,10 +1117,15 @@
     </div>
     <h1>Write Perfect Essays with <span class="green">AI Power</span></h1>
     <p>Generate high-quality, plagiarism-free essays up to 1000 words instantly. No sign-up, no fees — just powerful AI writing at your fingertips.</p>
-    <a href="#tools" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--green-500),var(--green-600));color:white;text-decoration:none;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 4px 16px rgba(34,197,94,0.3);transition:all 0.2s;animation:fadeInUp 0.6s ease-out 0.3s forwards;opacity:0;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(34,197,94,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(34,197,94,0.3)'">
-        Start Writing Free
-        <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-    </a>
+    <div class="hero-cta-wrap">
+        <a href="#tools" class="hero-cta">
+            Start Writing Free
+            <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+        </a>
+        <div class="powered-badge">
+            Powered by <img src="https://puter.com/favicon.ico" alt="Puter"> <strong>Puter.js AI</strong>
+        </div>
+    </div>
     <div class="hero-stats">
         <div class="hero-stat">
             <div class="num">2.5M+</div>
@@ -1141,13 +1146,10 @@
     </div>
 </section>
 
-<!-- ===== AD SPACE 1 ===== -->
 <div class="ad-space" aria-hidden="true">
-    <!-- Ad Space 728x90 — Place your Google AdSense code here -->
     Advertisement
 </div>
 
-<!-- ===== TOOL SECTION ===== -->
 <section class="tool-section" id="tools">
     <div class="tool-card">
         <div class="tool-header">
@@ -1156,7 +1158,7 @@
             </div>
             <div>
                 <h2>AI Essay Writer</h2>
-                <p>Generate essays up to 1000 words — completely free</p>
+                <p>Generate essays up to 1000 words — powered by Puter.js AI</p>
             </div>
         </div>
         <div class="tool-body">
@@ -1173,7 +1175,7 @@
                         <option value="expository" selected>Expository</option>
                         <option value="narrative">Narrative</option>
                         <option value="descriptive">Descriptive</option>
-                        <option value="compare">Compare & Contrast</option>
+                        <option value="compare and contrast">Compare & Contrast</option>
                         <option value="analytical">Analytical</option>
                     </select>
                 </div>
@@ -1199,18 +1201,24 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="essayInstructions">Additional Instructions (optional)</label>
-                <textarea id="essayInstructions" class="form-textarea" placeholder="e.g., Focus on higher education, include examples from real universities..." maxlength="500"></textarea>
+                <textarea id="essayInstructions" class="form-textarea" placeholder="e.g., Focus on higher education, include examples from real universities, mention specific statistics..." maxlength="500"></textarea>
             </div>
             <div class="word-counter">
                 <span>Instructions: <span class="count" id="instrCount">0</span>/500</span>
             </div>
-            <button class="generate-btn" id="generateBtn" onclick="generateEssay()">
+
+            <div class="ai-status" id="aiStatus">
+                <div class="dot"></div>
+                <span>Puter.js AI Connected — Ready to generate</span>
+            </div>
+
+            <button class="generate-btn" id="generateBtn" onclick="generateEssay()" style="margin-top:16px;">
                 <div class="spinner"></div>
                 <span class="btn-text">
                     <iconify-icon icon="lucide:sparkles"></iconify-icon>
-                    Generate Essay
+                    Generate Essay with AI
                 </span>
-                <span class="btn-loading-text">Generating your essay...</span>
+                <span class="btn-loading-text">AI is writing your essay...</span>
             </button>
 
             <div class="output-area" id="outputArea">
@@ -1238,15 +1246,10 @@
     </div>
 </section>
 
-<!-- ===== AD SPACE 2 ===== -->
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;">
-    <div class="ad-space" aria-hidden="true">
-        <!-- Ad Space 728x90 — Place your Google AdSense code here -->
-        Advertisement
-    </div>
+    <div class="ad-space" aria-hidden="true">Advertisement</div>
 </div>
 
-<!-- ===== HOW IT WORKS ===== -->
 <section class="section section-alt" id="how-it-works">
     <div class="section-header animate-on-scroll">
         <div class="section-badge">
@@ -1265,7 +1268,7 @@
         <div class="step-card animate-on-scroll">
             <div class="step-num">2</div>
             <h3>AI Generates Essay</h3>
-            <p>Our advanced AI analyzes your requirements and crafts a well-structured, coherent essay with proper introduction, body, and conclusion.</p>
+            <p>Our Puter.js powered AI analyzes your requirements and crafts a well-structured, coherent essay with proper introduction, body, and conclusion.</p>
         </div>
         <div class="step-card animate-on-scroll">
             <div class="step-num">3</div>
@@ -1275,7 +1278,6 @@
     </div>
 </section>
 
-<!-- ===== FEATURES ===== -->
 <section class="section" id="features">
     <div class="section-header animate-on-scroll">
         <div class="section-badge">
@@ -1287,54 +1289,42 @@
     </div>
     <div class="features-grid">
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:banknote"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:banknote"></iconify-icon></div>
             <div>
                 <h4>100% Free</h4>
                 <p>No hidden charges, no premium tiers, no credit card required. Completely free forever.</p>
             </div>
         </div>
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:user-x"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:user-x"></iconify-icon></div>
             <div>
                 <h4>No Sign-Up Required</h4>
                 <p>Start writing immediately. No account creation, no email verification, no personal data needed.</p>
             </div>
         </div>
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:shield-check"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:shield-check"></iconify-icon></div>
             <div>
                 <h4>Plagiarism-Free</h4>
-                <p>Every essay is generated from scratch, ensuring original content that passes all plagiarism checks.</p>
+                <p>Every essay is generated from scratch by AI, ensuring original content that passes all plagiarism checks.</p>
             </div>
         </div>
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:gauge"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:gauge"></iconify-icon></div>
             <div>
-                <h4>Instant Generation</h4>
-                <p>Get your complete essay in seconds, not minutes. Fast AI processing for quick results.</p>
+                <h4>Real AI Generation</h4>
+                <p>Powered by Puter.js with access to advanced language models. Real AI, not templates or pre-written content.</p>
             </div>
         </div>
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:globe"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:globe"></iconify-icon></div>
             <div>
                 <h4>Multiple Essay Types</h4>
-                <p>Support for argumentative, persuasive, expository, narrative, descriptive, and analytical essays.</p>
+                <p>Support for argumentative, persuasive, expository, narrative, descriptive, compare and contrast, and analytical essays.</p>
             </div>
         </div>
         <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
-                <iconify-icon icon="lucide:smartphone"></iconify-icon>
-            </div>
+            <div class="feature-icon"><iconify-icon icon="lucide:smartphone"></iconify-icon></div>
             <div>
                 <h4>Mobile Friendly</h4>
                 <p>Fully responsive design works perfectly on phones, tablets, and desktop computers.</p>
@@ -1343,15 +1333,10 @@
     </div>
 </section>
 
-<!-- ===== AD SPACE 3 ===== -->
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;">
-    <div class="ad-space" aria-hidden="true">
-        <!-- Ad Space 728x90 — Place your Google AdSense code here -->
-        Advertisement
-    </div>
+    <div class="ad-space" aria-hidden="true">Advertisement</div>
 </div>
 
-<!-- ===== FAQ ===== -->
 <section class="section section-alt" id="faq">
     <div class="section-header animate-on-scroll">
         <div class="section-badge">
@@ -1386,7 +1371,7 @@
                 <iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Yes, our AI generates original content from scratch. Each essay is uniquely crafted based on your topic and instructions, ensuring it passes plagiarism detection tools like Turnitin, Grammarly, and Copyscape.</div>
+                <div class="faq-answer-inner">Yes, our AI generates original content from scratch using advanced language models. Each essay is uniquely crafted based on your topic and instructions, ensuring it passes plagiarism detection tools like Turnitin, Grammarly, and Copyscape.</div>
             </div>
         </div>
         <div class="faq-item animate-on-scroll">
@@ -1418,17 +1403,16 @@
         </div>
         <div class="faq-item animate-on-scroll">
             <button class="faq-question" onclick="toggleFaq(this)">
-                What languages does the AI Essay Writer support?
+                What AI technology powers this tool?
                 <iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Currently, the tool generates essays in English. However, you can enter topics in any language and the AI will attempt to generate content accordingly. We are working on adding dedicated support for more languages in future updates.</div>
+                <div class="faq-answer-inner">Our essay writer is powered by Puter.js, which provides access to advanced AI language models including GPT-4o and Claude. This means you get real AI-generated content — not templates or pre-written essays — ensuring high quality and originality every time.</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== BLOG ===== -->
 <section class="section" id="blog">
     <div class="section-header animate-on-scroll">
         <div class="section-badge">
@@ -1455,7 +1439,7 @@
         <p itemprop="description">Artificial intelligence has fundamentally changed the way students, educators, and professionals approach writing. In 2026, AI writing tools are no longer a novelty — they are an essential part of the modern writing workflow. From generating initial outlines to polishing final drafts, these tools have become indispensable companions for anyone who writes regularly.</p>
 
         <h4>The Rise of AI-Powered Writing Assistants</h4>
-        <p>The journey of AI writing tools began with simple grammar checkers, but today's technology is remarkably sophisticated. Modern AI essay writers can understand context, maintain logical coherence across thousands of words, and adapt their writing style to match specific requirements. At AI Tools House, we have witnessed this evolution firsthand, and our free AI Essay Writer represents the cutting edge of what is possible in 2026.</p>
+        <p>The journey of AI writing tools began with simple grammar checkers, but today's technology is remarkably sophisticated. Modern AI essay writers can understand context, maintain logical coherence across thousands of words, and adapt their writing style to match specific requirements. At AI Tools House, we have witnessed this evolution firsthand, and our free AI Essay Writer powered by Puter.js represents the cutting edge of what is possible in 2026.</p>
 
         <h4>Key Benefits for Students and Writers</h4>
         <p>AI writing tools offer several compelling advantages that have driven their widespread adoption across the globe:</p>
@@ -1484,15 +1468,10 @@
     </article>
 </section>
 
-<!-- ===== AD SPACE 4 ===== -->
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;">
-    <div class="ad-space" aria-hidden="true">
-        <!-- Ad Space 728x90 — Place your Google AdSense code here -->
-        Advertisement
-    </div>
+    <div class="ad-space" aria-hidden="true">Advertisement</div>
 </div>
 
-<!-- ===== HIGH-RANK BACKLINKS ===== -->
 <section class="backlinks-section">
     <div class="backlinks-inner">
         <h4>Trusted & Referenced By</h4>
@@ -1527,11 +1506,16 @@
             <a href="https://openai.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink">
                 <iconify-icon icon="lucide:external-link"></iconify-icon> OpenAI
             </a>
+            <a href="https://puter.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink">
+                <iconify-icon icon="lucide:external-link"></iconify-icon> Puter.js
+            </a>
+            <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer nofollow" class="backlink">
+                <iconify-icon icon="lucide:external-link"></iconify-icon> MDN Web Docs
+            </a>
         </div>
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
@@ -1541,7 +1525,7 @@
                 </div>
                 AI Tools <span>House</span>
             </a>
-            <p>Your go-to destination for free AI-powered writing tools. Generate high-quality essays, articles, and content instantly — no sign-up required.</p>
+            <p>Your go-to destination for free AI-powered writing tools. Generate high-quality essays, articles, and content instantly — no sign-up required. Powered by Puter.js.</p>
         </div>
         <div>
             <h5>Tools</h5>
@@ -1572,7 +1556,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <span>© 2026 AI Tools House. All rights reserved.</span>
+        <span>© 2026 AI Tools House. All rights reserved. Powered by Puter.js</span>
         <div class="footer-social">
             <a href="#" aria-label="Twitter"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
             <a href="#" aria-label="Facebook"><iconify-icon icon="lucide:facebook"></iconify-icon></a>
@@ -1583,7 +1567,6 @@
     </div>
 </footer>
 
-<!-- ===== TOAST ===== -->
 <div class="toast" id="toast">
     <iconify-icon icon="lucide:check-circle" class="toast-icon"></iconify-icon>
     <span id="toastMsg">Copied to clipboard!</span>
@@ -1608,7 +1591,7 @@ function closeMobile() {
     document.getElementById('menuIcon').setAttribute('icon', 'lucide:menu');
 }
 
-// ===== ACTIVE NAV LINK =====
+// ===== ACTIVE NAV =====
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
     let current = '';
@@ -1627,14 +1610,16 @@ document.getElementById('essayInstructions').addEventListener('input', function(
 });
 
 // ===== TOAST =====
-function showToast(msg) {
+function showToast(msg, isError = false) {
     const t = document.getElementById('toast');
     document.getElementById('toastMsg').textContent = msg;
+    t.classList.toggle('error', isError);
+    t.querySelector('.toast-icon').setAttribute('icon', isError ? 'lucide:alert-circle' : 'lucide:check-circle');
     t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2500);
+    setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ===== FAQ TOGGLE =====
+// ===== FAQ =====
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const wasActive = item.classList.contains('active');
@@ -1653,150 +1638,104 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-// ===== ESSAY GENERATION =====
-const essayTemplates = {
-    argumentative: {
-        intro: (topic) => `The debate surrounding ${topic} has intensified significantly in recent years, drawing attention from academics, policymakers, and the general public alike. As society continues to evolve, understanding the various dimensions of this issue becomes increasingly critical. This essay presents a compelling argument that ${topic} represents not merely a contemporary trend, but a fundamental shift that demands careful consideration and informed action. Through an examination of empirical evidence, expert analysis, and real-world implications, it becomes clear that the argument in favor of ${topic} is both logically sound and practically necessary.`,
-        body: (topic, words) => {
-            const points = [
-                `First and foremost, the evidence supporting ${topic} is substantial and growing. Numerous peer-reviewed studies have demonstrated that the core principles underlying ${topic} are grounded in verifiable data and rigorous methodology. Researchers across multiple disciplines have independently arrived at similar conclusions, lending significant credibility to the argument. The convergence of findings from fields as diverse as technology, social science, and economics suggests that ${topic} addresses a genuine need rather than merely responding to temporary circumstances.`,
-                `Furthermore, the practical applications of ${topic} have already yielded measurable benefits in real-world settings. Case studies from various countries and institutions reveal that implementing approaches related to ${topic} has led to improved outcomes, increased efficiency, and greater satisfaction among stakeholders. These successes are not isolated incidents but rather represent a consistent pattern that strengthens the argument considerably. When theoretical support is reinforced by practical results, the case becomes difficult to dismiss.`,
-                `Critics of ${topic} often raise valid concerns that deserve thoughtful engagement. However, a careful analysis reveals that most objections can be addressed through proper implementation, adequate safeguards, and ongoing evaluation. The potential risks associated with ${topic} are manageable, especially when compared to the risks of inaction. History has shown that delaying necessary changes often results in greater challenges down the line, making a proactive approach not only preferable but essential.`,
-                `Moreover, the ethical dimensions of ${topic} align with broadly accepted principles of fairness, equity, and human dignity. Supporting ${topic} is not just a matter of practical utility but also of moral responsibility. In a world where access to opportunities and resources remains uneven, embracing ${topic} can serve as a powerful equalizer, creating pathways for those who have historically been marginalized or underserved.`,
-                `Additionally, the economic implications of ${topic} are overwhelmingly positive. While initial transition costs may be a concern for some, the long-term economic benefits — including increased productivity, innovation, and competitive advantage — far outweigh the short-term investments required. Forward-thinking organizations and governments that have already begun to align their strategies with ${topic} are positioning themselves for sustained success in an increasingly complex global landscape.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `In conclusion, the argument in favor of ${topic} rests on a solid foundation of evidence, practical success, ethical alignment, and economic benefit. While no position is without its complexities, the weight of reasoning clearly supports embracing ${topic} as both a necessary and beneficial development. As we look to the future, it is imperative that individuals, institutions, and governments engage constructively with this topic, moving beyond superficial debates to meaningful action. The time for passive observation has passed; the time for informed, decisive engagement with ${topic} is now.`
-    },
-    expository: {
-        intro: (topic) => `${topic} is a subject of considerable significance in today's world, influencing multiple aspects of modern life and generating widespread interest across diverse populations. Understanding this topic requires a comprehensive examination of its origins, key components, current applications, and future potential. This essay provides a thorough exploration of ${topic}, presenting factual information and expert insights to offer readers a clear, well-rounded understanding of why this subject matters and how it continues to shape our world.`,
-        body: (topic, words) => {
-            const points = [
-                `To understand ${topic} properly, it is essential to examine its historical development and foundational principles. The origins of ${topic} can be traced back to fundamental shifts in how society approaches complex challenges. Over time, key thinkers, innovators, and practitioners have contributed to a growing body of knowledge that forms the basis of our current understanding. This evolution has not been linear; rather, it has been characterized by periods of rapid advancement, thoughtful refinement, and occasional paradigm shifts that redefined the field entirely.`,
-                `At its core, ${topic} encompasses several interconnected components that work together to create a coherent framework. These components include theoretical foundations that provide the intellectual scaffolding, practical methodologies that guide implementation, and evaluative mechanisms that measure effectiveness. Understanding how these elements interact is crucial for anyone seeking to engage meaningfully with ${topic}. Each component alone offers valuable insights, but their combined impact is what truly drives the significance of this subject.`,
-                `The applications of ${topic} in contemporary settings are both diverse and impactful. From education and healthcare to business and technology, the principles underlying ${topic} have been adapted to address specific challenges and create new opportunities. In education, for instance, approaches informed by ${topic} have transformed teaching methodologies and learning outcomes. In healthcare, applications have improved patient care and operational efficiency. The business sector has leveraged ${topic} to enhance decision-making, drive innovation, and create sustainable competitive advantages.`,
-                `Looking at the global perspective, ${topic} manifests differently across cultures and regions, reflecting local values, priorities, and resources. This diversity of implementation offers valuable lessons for practitioners everywhere. What works in one context may need significant adaptation in another, and understanding these nuances is essential for effective application. International organizations and cross-cultural research initiatives have played a vital role in facilitating the exchange of knowledge and best practices related to ${topic}.`,
-                `The future trajectory of ${topic} is shaped by several emerging trends and ongoing developments. Advances in technology, shifting societal priorities, and evolving regulatory landscapes all influence how ${topic} will continue to develop. Experts predict that the coming years will bring even greater integration of ${topic} into daily life, along with new challenges that will require innovative solutions. Staying informed about these trends is essential for anyone invested in this field.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `In summary, ${topic} represents a multifaceted subject with deep historical roots, practical significance, and promising future potential. By examining its foundations, components, applications, and global variations, we gain a comprehensive understanding that goes beyond surface-level awareness. As ${topic} continues to evolve, remaining informed and engaged will be essential for individuals and organizations alike. The knowledge presented in this essay serves as a starting point for deeper exploration and a foundation for meaningful participation in the ongoing development of this important field.`
-    },
-    persuasive: {
-        intro: (topic) => `Imagine a world where ${topic} is fully embraced and implemented — a world of greater opportunity, efficiency, and progress. This is not a distant dream but an achievable reality if we choose to act decisively. Despite some resistance, the case for ${topic} is compelling and urgent. This essay aims to persuade you that supporting ${topic} is not merely one option among many, but the most responsible and beneficial path forward for our communities, our economies, and our collective future.`,
-        body: (topic, words) => {
-            const points = [
-                `Consider the tangible benefits that ${topic} has already delivered in contexts where it has been adopted. These are not theoretical projections but documented outcomes that have improved real people's lives. Students have achieved better results. Businesses have increased their productivity. Communities have become more connected and resilient. These success stories are powerful evidence that ${topic} works, and dismissing them would mean ignoring a proven pathway to improvement.`,
-                `Think about the cost of inaction. Every day that we delay embracing ${topic}, we fall further behind. Competitors who have already adopted these approaches are gaining advantages that become increasingly difficult to overcome. The opportunity cost of hesitation is not just economic — it affects quality of life, educational outcomes, and social cohesion. When we weigh the risks of action against the risks of inaction, the choice becomes clear: we cannot afford to wait.`,
-                `Listen to the voices of those who have experienced the transformative power of ${topic} firsthand. Teachers report that their students are more engaged and motivated. Healthcare professionals describe better patient outcomes. Entrepreneurs credit ${topic} with giving them the tools to innovate and compete. These testimonies are not anomalies — they represent a consistent pattern of positive change that should inspire confidence and action from all of us.`,
-                `Examine the alternatives to ${topic} and you will find that none offer the same combination of effectiveness, scalability, and accessibility. Other approaches may address isolated aspects of the challenge, but ${topic} provides a comprehensive framework that can be adapted to diverse contexts and needs. Piecemeal solutions simply cannot match the systemic impact that ${topic} delivers.`,
-                `Look beyond immediate self-interest to the broader social good that ${topic} promotes. At its heart, this is about creating a more equitable, efficient, and forward-thinking society. When we support ${topic}, we are not just advancing our own interests — we are contributing to a collective effort that benefits everyone, including future generations who will inherit the systems and structures we build today.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `The evidence is overwhelming, the testimonials are inspiring, and the logic is clear: ${topic} deserves our full support and active engagement. This is not a time for half-measures or cautious deliberation — it is a time for bold, committed action. Each of us has a role to play, whether as advocates, practitioners, or simply informed citizens who use their voices to drive change. Let us embrace ${topic} not as a burden but as an extraordinary opportunity to build a better future. The question is no longer whether we should act, but how quickly we can begin.`
-    },
-    narrative: {
-        intro: (topic) => `It was a crisp morning when I first encountered the reality of ${topic} — not as an abstract concept discussed in classrooms or boardrooms, but as a living, breathing force that would reshape my understanding in ways I never anticipated. What follows is the story of that encounter and the journey it set in motion, a journey that taught me more about ${topic} — and about myself — than any textbook ever could.`,
-        body: (topic, words) => {
-            const points = [
-                `The day began like any other, with the familiar rhythm of routine guiding my morning. But there was an undercurrent of anticipation that I could not quite explain. I had been reading about ${topic} for weeks, poring over articles and research papers, yet nothing had prepared me for the moment when theory would meet practice. Walking into that room — filled with people from different backgrounds, each carrying their own expectations — I felt both nervous and exhilarated.`,
-                `The first hour was a revelation. As the discussion unfolded, I realized that ${topic} was not the monolithic concept I had imagined. It was nuanced, multifaceted, and deeply human in its implications. People shared stories that brought dry statistics to life — a teacher who had transformed her classroom, a small business owner who had found new markets, a student who had discovered a passion he never knew existed. Each story was a thread in a larger tapestry that I was only beginning to see.`,
-                `There was a moment, midway through the afternoon, when everything clicked. A speaker described a challenge that seemed insurmountable, then showed how principles related to ${topic} provided a framework for addressing it. The logic was elegant, but more importantly, it was human. It acknowledged limitations, welcomed collaboration, and prioritized real impact over theoretical perfection. I looked around the room and saw the same recognition on other faces — the shift from understanding to believing.`,
-                `The weeks that followed were transformative. Armed with new insights, I began applying what I had learned about ${topic} in my own context. There were setbacks, of course — moments of frustration when reality did not match the idealized versions I had encountered. But each setback was also a lesson, teaching me that ${topic} is not a destination but a process, one that requires patience, adaptability, and a willingness to learn from failure.`,
-                `Looking back now, I can trace a clear line from that crisp morning to where I stand today. My understanding of ${topic} has deepened immeasurably, not because I accumulated more facts, but because I lived the experience. I saw it through the eyes of others, felt its impact in my own work, and grappled with its complexities in real time. That journey changed not just what I know but how I think.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `That initial encounter with ${topic} was the beginning of a journey that continues to this day. It taught me that the most profound learning happens not in isolation but in connection — with ideas, with people, with real-world challenges that demand more than theoretical answers. ${topic} is not just a subject to be studied; it is a lens through which to view the world, one that reveals possibilities where others see obstacles. And that, perhaps, is the most valuable lesson of all.`
-    },
-    descriptive: {
-        intro: (topic) => `Close your eyes for a moment and picture the essence of ${topic} — not as a collection of facts or figures, but as a vivid, multi-sensory experience. What does it look like? How does it feel? What sounds, textures, and atmospheres surround it? To truly understand ${topic}, we must move beyond abstract description and engage our full perceptual range, allowing the richness of detail to bring this subject to life in all its complexity and beauty.`,
-        body: (topic, words) => {
-            const points = [
-                `At first glance, ${topic} presents itself with a striking visual clarity. There is an architecture to it — a structure that reveals itself gradually, like a landscape emerging from morning mist. The surface details are compelling enough: clean lines, deliberate arrangements, a sense of purpose that permeates every element. But look more closely, and you begin to notice the subtler aspects — the variations in texture, the interplay of light and shadow, the small imperfections that paradoxically make the whole feel more authentic and alive.`,
-                `The soundscape of ${topic} is equally distinctive. There is a rhythm to it, not rigid or mechanical, but organic and responsive, like the pulse of a living system. At times it hums with quiet efficiency; at other moments, it rises to a crescendo of activity that is almost musical in its complexity. Listen carefully, and you can detect layers within layers — the foreground noise that demands immediate attention, the middle ground of ongoing processes, and the deep background hum that provides a constant, reassuring foundation.`,
-                `Touch ${topic} — metaphorically or literally — and you encounter a remarkable range of textures. Some aspects are smooth and polished, the result of careful refinement over time. Others are rough and unfinished, representing work in progress or areas that remain fundamentally challenging. This contrast is not a flaw but a feature, reminding us that ${topic} is dynamic rather than static, evolving rather than fixed. The tactile experience tells a story of continuous becoming.`,
-                `The atmosphere surrounding ${topic} shifts depending on context and perspective. In some settings, it carries the charged energy of innovation and possibility — the electric feeling that something important is happening. In others, it exudes a calm confidence born of proven success and deep institutional knowledge. These atmospheric variations are not contradictory; they are complementary facets of the same phenomenon, each revealing different truths about the nature and potential of ${topic}.`,
-                `Perhaps most striking is the human dimension that suffuses every aspect of ${topic}. Behind the structures, sounds, and textures, there are people — their aspirations, their expertise, their collaborative spirit. This human presence gives ${topic} a warmth and vitality that no amount of technical sophistication could replicate. It is the difference between a building and a home, between a system and a community.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `To describe ${topic} fully is to engage with it on every level — visual, auditory, tactile, atmospheric, and human. It is a subject that rewards close attention and resists shallow characterization. Like a great painting or a symphony, it reveals new dimensions with each encounter, inviting us to look deeper, listen more carefully, and appreciate the intricate beauty of something that might initially seem straightforward. In the end, the richest description of ${topic} is not one that captures everything, but one that inspires others to see, hear, and feel it for themselves.`
-    },
-    compare: {
-        intro: (topic) => `Understanding ${topic} requires more than examining it in isolation — it demands comparison. By placing ${topic} alongside alternative approaches and contrasting perspectives, we gain insights that neither view could provide alone. This essay undertakes a systematic comparison, exploring both the similarities that connect ${topic} to related concepts and the differences that distinguish it, ultimately revealing why these distinctions matter for practitioners, policymakers, and anyone seeking to navigate this complex landscape.`,
-        body: (topic, words) => {
-            const points = [
-                `At a foundational level, ${topic} shares important commonalities with several related approaches. All seek to address similar core challenges — improving outcomes, increasing efficiency, and adapting to changing circumstances. The shared vocabulary and overlapping objectives can make it tempting to treat these approaches as interchangeable. However, this surface similarity masks deeper structural differences that have significant practical implications. Understanding where ${topic} converges with alternatives is the first step toward understanding where it diverges.`,
-                `The first major point of divergence lies in methodology. While traditional approaches often rely on linear, sequential processes, ${topic} embraces a more dynamic, iterative model. This means that rather than following a predetermined path from analysis to implementation, ${topic} allows for continuous adjustment and refinement based on real-time feedback. The result is a more responsive and adaptable approach, though one that requires greater flexibility and tolerance for ambiguity from its practitioners.`,
-                `Another significant difference is in scope and scale. Alternative approaches tend to operate within well-defined boundaries, addressing specific problems with targeted solutions. ${topic}, by contrast, takes a more holistic view, recognizing the interconnected nature of modern challenges and seeking solutions that address root causes rather than just symptoms. This broader perspective can be more demanding in terms of resources and coordination, but it also produces more sustainable and comprehensive outcomes.`,
-                `When it comes to measuring success, ${topic} and its alternatives also differ markedly. Conventional methods typically rely on quantitative metrics — test scores, profit margins, efficiency ratios. While ${topic} values these measures, it also incorporates qualitative assessments that capture dimensions often missed by numbers alone: user satisfaction, community impact, long-term resilience. This balanced approach to evaluation provides a more complete picture but requires more sophisticated assessment tools.`,
-                `The human element represents perhaps the most consequential difference. Many alternative approaches treat people primarily as inputs, outputs, or variables in a system. ${topic}, in contrast, places human agency and experience at the center of its framework. This people-first philosophy influences everything from design to implementation to evaluation, creating approaches that are not only more effective but also more ethical and sustainable.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `The comparison between ${topic} and alternative approaches reveals a subject that is both connected to broader traditions and distinct in important ways. Its dynamic methodology, holistic scope, balanced evaluation, and people-centered philosophy set it apart in ways that have real consequences for effectiveness and impact. This is not to say that ${topic} is universally superior — different contexts may call for different tools. But understanding these distinctions equips us to make more informed choices about when and how to deploy ${topic} for maximum benefit.`
-    },
-    analytical: {
-        intro: (topic) => `Beneath the surface of ${topic} lies a complex system of causes, effects, relationships, and dynamics that demand rigorous analytical examination. This essay deconstructs ${topic} into its constituent elements, examining each through multiple analytical lenses to reveal the underlying mechanisms that drive its function and significance. By moving beyond description to analysis, we can identify not just what ${topic} is, but why it matters, how it works, and what its implications are for the future.`,
-        body: (topic, words) => {
-            const points = [
-                `A structural analysis of ${topic} reveals a carefully organized system with interdependent components. At the macro level, ${topic} operates within broader environmental contexts — political, economic, social, and technological — that shape its possibilities and constraints. At the micro level, individual elements interact through feedback loops, both reinforcing and balancing, that create the system's characteristic behaviors. Understanding this multi-level structure is essential for predicting how ${topic} will respond to changes in its environment or internal dynamics.`,
-                `Causal analysis uncovers the driving forces behind ${topic}. Primary causes include fundamental shifts in technology and social values that created the conditions for ${topic} to emerge. Secondary causes involve specific policy decisions, institutional choices, and individual actions that shaped its particular form. Importantly, the relationship between cause and effect is not always linear — feedback effects mean that ${topic} now influences the very factors that originally gave rise to it, creating self-reinforcing cycles that accelerate change.`,
-                `A stakeholder analysis reveals that ${topic} affects — and is affected by — a diverse array of actors with varying interests, power levels, and perspectives. Primary stakeholders, those most directly involved, tend to be the most visible participants. But secondary and tertiary stakeholders — including future generations, indirect beneficiaries, and those who bear spillover effects — also play crucial roles. Mapping these stakeholder relationships helps explain the political dynamics that often surround ${topic} and identifies potential points of leverage for influence.`,
-                `Temporal analysis shows that ${topic} is not static but evolves through distinct phases. The emergence phase was characterized by experimentation and uncertainty. The growth phase brought rapid expansion and increasing formalization. The current phase appears to be one of maturation and integration, where ${topic} is becoming embedded in established systems and practices. Projecting forward, the next phase may involve transformation as new technologies, challenges, and opportunities reshape the landscape once again.`,
-                `A critical analysis must also acknowledge the limitations and tensions inherent in ${topic}. These include trade-offs between efficiency and equity, tensions between standardization and flexibility, and the challenge of maintaining quality at scale. Neither uncritical enthusiasm nor reflexive opposition serves the cause of understanding; what is needed is honest engagement with both the strengths and weaknesses of ${topic} as it currently exists.`
-            ];
-            return points.slice(0, Math.ceil(words / 200)).join('\n\n');
-        },
-        conclusion: (topic) => `This analytical examination of ${topic} reveals a subject far more complex and consequential than surface-level engagement might suggest. Its structural sophistication, causal dynamics, stakeholder relationships, temporal evolution, and inherent tensions all contribute to a picture that demands nuance and ongoing attention. The analysis presented here provides a framework for deeper understanding, but it also highlights the need for continued research, critical reflection, and adaptive practice. ${topic} is not a problem to be solved but a reality to be understood — and that understanding must be continuously deepened if we are to engage with it effectively.`
-    }
-};
+// ===== AI STATUS CHECK =====
+function updateAIStatus(connected, msg) {
+    const s = document.getElementById('aiStatus');
+    s.classList.toggle('error', !connected);
+    s.querySelector('span').textContent = msg;
+}
 
-function generateEssay() {
+// ===== ESSAY GENERATION WITH PUTER.JS =====
+async function generateEssay() {
     const topic = document.getElementById('essayTopic').value.trim();
     if (!topic) {
-        showToast('Please enter an essay topic');
+        showToast('Please enter an essay topic', true);
         document.getElementById('essayTopic').focus();
         return;
     }
 
     const type = document.getElementById('essayType').value;
-    const wordCount = parseInt(document.getElementById('wordCount').value);
-    const btn = document.getElementById('generateBtn');
+    const wordCount = document.getElementById('wordCount').value;
+    const tone = document.getElementById('essayTone').value;
+    const instructions = document.getElementById('essayInstructions').value.trim();
 
+    const btn = document.getElementById('generateBtn');
     btn.classList.add('loading');
     btn.disabled = true;
+    updateAIStatus(true, 'Puter.js AI is generating your essay...');
 
-    setTimeout(() => {
-        const template = essayTemplates[type] || essayTemplates.expository;
-        let essay = template.intro(topic) + '\n\n' + template.body(topic, wordCount) + '\n\n' + template.conclusion(topic);
+    const prompt = `Write a ${type} essay of approximately ${wordCount} words on the topic: "${topic}".
 
-        // Trim to word limit
-        const words = essay.split(/\s+/);
-        if (words.length > wordCount) {
-            essay = words.slice(0, wordCount).join(' ');
-            // Ensure it ends with a period
+Requirements:
+- Essay type: ${type}
+- Tone: ${tone}
+- Word count: approximately ${wordCount} words (strict limit, do not exceed ${wordCount} words)
+- Structure: Must have a clear introduction, body paragraphs, and conclusion
+- Writing quality: Well-structured paragraphs, coherent arguments, proper transitions
+- Do NOT include any titles, headings (like "Introduction", "Conclusion"), or bullet points in the essay body
+- Write the essay as continuous prose paragraphs only
+ ${instructions ? `- Additional instructions: ${instructions}` : ''}
+
+Write the essay directly without any preamble, explanation, or meta-text. Start with the first sentence of the essay.`;
+
+    try {
+        const response = await puter.ai.chat(prompt, {
+            model: 'gpt-4o-mini'
+        });
+
+        let essay = '';
+        if (typeof response === 'string') {
+            essay = response;
+        } else if (response && response.toString) {
+            essay = response.toString();
+        } else if (response && response.message && response.message.content) {
+            essay = response.message.content;
+        } else if (response && response[0] && response[0].message && response[0].message.content) {
+            essay = response[0].message.content;
+        } else {
+            essay = JSON.stringify(response);
+        }
+
+        // Clean up
+        essay = essay.trim();
+        essay = essay.replace(/^["']|["']$/g, '');
+
+        // Remove any markdown headers if present
+        essay = essay.replace(/^#{1,6}\s+.+$/gm, '');
+
+        // Enforce word limit
+        const words = essay.split(/\s+/).filter(w => w.length > 0);
+        if (words.length > parseInt(wordCount)) {
+            essay = words.slice(0, parseInt(wordCount)).join(' ');
             if (!essay.endsWith('.')) essay += '.';
         }
 
         document.getElementById('essayOutput').textContent = essay;
-        const finalCount = essay.split(/\s+/).length;
-        document.getElementById('outputWords').textContent = `Word count: ${finalCount} words`;
+        const finalCount = essay.split(/\s+/).filter(w => w.length > 0).length;
+        document.getElementById('outputWords').textContent = `Word count: ${finalCount} words | Generated by Puter.js AI (GPT-4o-mini)`;
         document.getElementById('outputArea').classList.add('active');
         document.getElementById('outputArea').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
+        updateAIStatus(true, `Puter.js AI Connected — Essay generated (${finalCount} words)`);
+        showToast('Essay generated successfully by AI!');
+
+    } catch (error) {
+        console.error('Puter.js Error:', error);
+        updateAIStatus(false, 'AI connection error. Please try again.');
+        showToast('Error generating essay: ' + (error.message || 'Unknown error'), true);
+    } finally {
         btn.classList.remove('loading');
         btn.disabled = false;
-        showToast('Essay generated successfully!');
-    }, 2000 + Math.random() * 1500);
+    }
 }
 
+// ===== COPY =====
 function copyEssay() {
     const text = document.getElementById('essayOutput').textContent;
-    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!')).catch(() => {
+    if (!text) { showToast('No essay to copy', true); return; }
+    navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied to clipboard!');
+    }).catch(() => {
         const ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
@@ -1807,8 +1746,10 @@ function copyEssay() {
     });
 }
 
+// ===== DOWNLOAD =====
 function downloadEssay() {
     const text = document.getElementById('essayOutput').textContent;
+    if (!text) { showToast('No essay to download', true); return; }
     const topic = document.getElementById('essayTopic').value.trim() || 'essay';
     const blob = new Blob([text], { type: 'text/plain' });
     const a = document.createElement('a');
@@ -1819,11 +1760,34 @@ function downloadEssay() {
     showToast('Essay downloaded!');
 }
 
+// ===== CLEAR =====
 function clearEssay() {
     document.getElementById('essayOutput').textContent = '';
     document.getElementById('outputArea').classList.remove('active');
+    updateAIStatus(true, 'Puter.js AI Connected — Ready to generate');
     showToast('Output cleared');
 }
+
+// ===== CHECK PUTER.JS ON LOAD =====
+window.addEventListener('load', () => {
+    if (typeof puter !== 'undefined' && puter.ai) {
+        updateAIStatus(true, 'Puter.js AI Connected — Ready to generate');
+    } else {
+        updateAIStatus(false, 'Puter.js is loading... Please wait.');
+        const checkInterval = setInterval(() => {
+            if (typeof puter !== 'undefined' && puter.ai) {
+                updateAIStatus(true, 'Puter.js AI Connected — Ready to generate');
+                clearInterval(checkInterval);
+            }
+        }, 1000);
+        setTimeout(() => clearInterval(checkInterval), 15000);
+    }
+});
+
+// Allow Enter key to trigger generation
+document.getElementById('essayTopic').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); generateEssay(); }
+});
 </script>
 
 </body>
