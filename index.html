@@ -1000,8 +1000,14 @@
         const badgeHTML = tool.badge === 'popular' ? '<span class="badge badge-popular">🔥 Popular</span>' :
                           tool.badge === 'new' ? '<span class="badge badge-new">✨ New</span>' :
                           '<span class="badge badge-free">Free</span>';
+
+        const isRealPage = tool.url && tool.url !== '#free-tools';
+        const clickAction = isRealPage
+            ? `window.location.href='${tool.url}'`
+            : `showToast('${tool.name} coming soon — try our free tools below!','info');document.getElementById('free-tools').scrollIntoView({behavior:'smooth'})`;
+
         return `
-        <div class="tool-card bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer" onclick="showToast('Opening ${tool.name}...','info')" data-name="${tool.name.toLowerCase()}" data-cat="${tool.cat}">
+        <div class="tool-card bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer" onclick="${clickAction}" data-name="${tool.name.toLowerCase()}" data-cat="${tool.cat}">
             <div class="flex items-start justify-between mb-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center border border-primary-100">
                     <i data-lucide="${tool.icon}" class="w-6 h-6 text-primary-600"></i>
