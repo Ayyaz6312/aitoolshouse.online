@@ -125,7 +125,6 @@
         html { scroll-behavior: smooth; scroll-padding-top: 80px; }
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--gray-800); line-height: 1.6; overflow-x: hidden; }
 
-        /* NAVBAR */
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(34,197,94,0.1); transition: all 0.3s ease; }
         .navbar.scrolled { background: rgba(255,255,255,0.95); box-shadow: var(--shadow-md); }
         .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; }
@@ -149,7 +148,6 @@
         .mobile-menu .mobile-settings { border-top: 1px solid var(--gray-100); margin-top: 8px; padding-top: 12px; display: flex; align-items: center; gap: 10px; color: var(--gray-500); font-size: 14px; cursor: pointer; }
         .mobile-menu .mobile-settings:hover { color: var(--green-700); }
 
-        /* HERO */
         .hero { padding: 140px 24px 80px; text-align: center; background: linear-gradient(180deg, var(--green-50) 0%, var(--white) 100%); position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%); pointer-events: none; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--green-100); border: 1px solid var(--green-200); border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--green-700); margin-bottom: 24px; animation: fadeInDown 0.5s ease-out forwards; }
@@ -164,10 +162,8 @@
         .hero-stat .num { font-size: 28px; font-weight: 800; color: var(--green-600); }
         .hero-stat .label { font-size: 13px; color: var(--gray-400); font-weight: 500; margin-top: 2px; }
 
-        /* AD SPACE */
         .ad-space { max-width: 728px; margin: 0 auto 40px; background: var(--gray-50); border: 2px dashed var(--gray-200); border-radius: 12px; padding: 20px; text-align: center; color: var(--gray-400); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; min-height: 90px; display: flex; align-items: center; justify-content: center; }
 
-        /* TOOL */
         .tool-section { padding: 40px 24px 80px; max-width: 900px; margin: 0 auto; }
         .tool-card { background: white; border: 1px solid var(--green-200); border-radius: 20px; box-shadow: var(--shadow-green), var(--shadow-lg); overflow: hidden; }
         .tool-header { padding: 28px 32px 20px; border-bottom: 1px solid var(--green-100); display: flex; align-items: center; gap: 14px; }
@@ -194,7 +190,6 @@
         .generate-btn.loading .btn-loading-text { display: inline; }
         .btn-loading-text { display: none; }
 
-        /* AI STATUS */
         .ai-status { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 16px; background: var(--green-50); border: 1px solid var(--green-200); border-radius: 10px; font-size: 12px; color: var(--green-700); font-weight: 600; }
         .ai-status .dot { width: 8px; height: 8px; background: var(--green-500); border-radius: 50%; animation: pulse-dot 1.5s ease-in-out infinite; }
         .ai-status.error { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
@@ -202,7 +197,6 @@
         .ai-status.warning { background: #fffbeb; border-color: #fde68a; color: #d97706; }
         .ai-status.warning .dot { background: #d97706; }
 
-        /* OUTPUT */
         .output-area { margin-top: 24px; display: none; }
         .output-area.active { display: block; }
         .output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px; }
@@ -213,7 +207,6 @@
         .output-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px; font-size: 15px; line-height: 1.8; color: var(--gray-700); min-height: 200px; white-space: pre-wrap; word-wrap: break-word; }
         .output-words { margin-top: 10px; font-size: 12px; color: var(--gray-400); text-align: right; font-weight: 500; }
 
-        /* SETTINGS MODAL */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px; }
         .modal-overlay.active { display: flex; }
         .modal { background: white; border-radius: 20px; max-width: 480px; width: 100%; box-shadow: var(--shadow-xl); animation: modalIn 0.25s ease-out; overflow: hidden; }
@@ -238,7 +231,6 @@
         .modal-hint a { color: var(--green-600); text-decoration: none; font-weight: 600; }
         .modal-hint a:hover { text-decoration: underline; }
 
-        /* SECTIONS */
         .section { padding: 80px 24px; }
         .section-alt { background: var(--green-50); }
         .section-header { text-align: center; max-width: 600px; margin: 0 auto 56px; }
@@ -269,7 +261,6 @@
         .faq-item.active .faq-answer { max-height: 300px; }
         .faq-answer-inner { padding: 0 24px 20px; font-size: 14px; color: var(--gray-500); line-height: 1.7; }
 
-        /* BLOG */
         .blog-content { max-width: 800px; margin: 0 auto; background: white; border: 1px solid var(--gray-100); border-radius: 20px; padding: 40px; box-shadow: var(--shadow); }
         .blog-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
         .blog-tag { padding: 4px 12px; background: var(--green-100); color: var(--green-700); font-size: 12px; font-weight: 600; border-radius: 100px; }
@@ -281,7 +272,6 @@
         .blog-content ul li { margin-bottom: 6px; }
         .blog-content blockquote { border-left: 4px solid var(--green-400); padding: 16px 24px; margin: 24px 0; background: var(--green-50); border-radius: 0 12px 12px 0; font-style: italic; color: var(--gray-600); font-size: 15px; }
 
-        /* BACKLINKS */
         .backlinks-section { padding: 40px 24px; background: var(--gray-50); border-top: 1px solid var(--gray-100); }
         .backlinks-inner { max-width: 1000px; margin: 0 auto; }
         .backlinks-inner h4 { font-size: 13px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; text-align: center; }
@@ -289,7 +279,6 @@
         .backlink { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: white; border: 1px solid var(--gray-200); border-radius: 100px; font-size: 13px; color: var(--gray-500); text-decoration: none; transition: all 0.2s; font-weight: 500; }
         .backlink:hover { border-color: var(--green-400); color: var(--green-700); background: var(--green-50); }
 
-        /* FOOTER */
         .footer { background: var(--gray-900); color: var(--gray-400); padding: 60px 24px 30px; }
         .footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-brand .logo { color: var(--green-400); margin-bottom: 14px; }
@@ -304,7 +293,6 @@
         .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-500); text-decoration: none; transition: all 0.2s; font-size: 16px; }
         .footer-social a:hover { border-color: var(--green-500); color: var(--green-400); background: rgba(34,197,94,0.1); }
 
-        /* TOAST */
         .toast { position: fixed; bottom: 30px; right: 30px; background: var(--gray-900); color: white; padding: 14px 24px; border-radius: 12px; font-size: 14px; font-weight: 500; box-shadow: var(--shadow-xl); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 9999; display: flex; align-items: center; gap: 10px; }
         .toast.show { transform: translateY(0); opacity: 1; }
         .toast .toast-icon { color: var(--green-400); font-size: 18px; }
@@ -342,7 +330,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#" class="logo">
@@ -368,7 +355,6 @@
     </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#home" onclick="closeMobile()">Home</a>
     <a href="#tools" onclick="closeMobile()">Tools</a>
@@ -380,7 +366,6 @@
     </div>
 </div>
 
-<!-- SETTINGS MODAL -->
 <div class="modal-overlay" id="settingsModal">
     <div class="modal">
         <div class="modal-head">
@@ -388,21 +373,20 @@
             <button class="modal-close" onclick="closeSettings()"><iconify-icon icon="lucide:x"></iconify-icon></button>
         </div>
         <div class="modal-body">
-            <p>Enter your AI API key to power the essay writer. Your key is stored locally in your browser and never sent to our servers — it goes directly to the AI provider.</p>
+            <p>Ye tool ek built-in AI key ke saath already ready hai — bina kuch kiye generate kar sakte ho. Agar tum apni khud ki key use karna chahte ho (recommended for production), niche daal do — wo built-in key ko override kar degi.</p>
             <div class="api-input-wrap">
-                <input type="password" id="apiKeyInput" class="api-input" placeholder="AIzaSy..." autocomplete="off" spellcheck="false">
+                <input type="password" id="apiKeyInput" class="api-input" placeholder="AIzaSy... (optional override)" autocomplete="off" spellcheck="false">
                 <button class="toggle-vis" onclick="toggleKeyVis()" title="Show/hide key"><iconify-icon icon="lucide:eye" id="eyeIcon"></iconify-icon></button>
             </div>
             <div class="modal-actions">
                 <button class="modal-save" onclick="saveApiKey()">Save Key</button>
-                <button class="modal-clear" onclick="clearApiKey()">Remove</button>
+                <button class="modal-clear" onclick="clearApiKey()">Reset to Default</button>
             </div>
-            <p class="modal-hint">Get a free API key from <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>. Free tier includes generous usage limits.</p>
+            <p class="modal-hint">Apni free key <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a> se le sakte ho.</p>
         </div>
     </div>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-badge">
         <iconify-icon icon="lucide:sparkles"></iconify-icon>
@@ -423,7 +407,6 @@
 
 <div class="ad-space" aria-hidden="true">Advertisement</div>
 
-<!-- TOOL -->
 <section class="tool-section" id="tools">
     <div class="tool-card">
         <div class="tool-header">
@@ -508,7 +491,6 @@
 
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;"><div class="ad-space" aria-hidden="true">Advertisement</div></div>
 
-<!-- HOW IT WORKS -->
 <section class="section section-alt" id="how-it-works">
     <div class="section-header animate-on-scroll">
         <div class="section-badge"><iconify-icon icon="lucide:zap"></iconify-icon> Simple Process</div>
@@ -518,13 +500,13 @@
     <div class="steps-grid">
         <div class="step-card animate-on-scroll">
             <div class="step-num">1</div>
-            <h3>Set Up API Key</h3>
-            <p>Click the settings icon, paste your free AI API key (one-time setup). Your key stays private in your browser.</p>
+            <h3>Enter Your Topic</h3>
+            <p>Type your essay topic, select type, word count, and tone. The AI is already connected — no setup required.</p>
         </div>
         <div class="step-card animate-on-scroll">
             <div class="step-num">2</div>
-            <h3>Enter Topic & Generate</h3>
-            <p>Type your essay topic, select type, word count, and tone. Hit generate and let the AI craft your essay in seconds.</p>
+            <h3>Generate Instantly</h3>
+            <p>Hit generate and let the AI craft your complete essay in seconds, structured and ready to read.</p>
         </div>
         <div class="step-card animate-on-scroll">
             <div class="step-num">3</div>
@@ -534,7 +516,6 @@
     </div>
 </section>
 
-<!-- FEATURES -->
 <section class="section" id="features">
     <div class="section-header animate-on-scroll">
         <div class="section-badge"><iconify-icon icon="lucide:shield-check"></iconify-icon> Why Choose Us</div>
@@ -544,11 +525,11 @@
     <div class="features-grid">
         <div class="feature-card animate-on-scroll">
             <div class="feature-icon"><iconify-icon icon="lucide:banknote"></iconify-icon></div>
-            <div><h4>100% Free</h4><p>No hidden charges, no premium tiers, no credit card required. The AI API key is also free from the provider.</p></div>
+            <div><h4>100% Free</h4><p>No hidden charges, no premium tiers, no credit card required.</p></div>
         </div>
         <div class="feature-card animate-on-scroll">
             <div class="feature-icon"><iconify-icon icon="lucide:lock"></iconify-icon></div>
-            <div><h4>Private & Secure</h4><p>Your API key never touches our servers. It stays in your browser's localStorage and goes directly to the AI endpoint.</p></div>
+            <div><h4>Ready to Use</h4><p>AI is pre-connected — start generating essays immediately, no setup needed.</p></div>
         </div>
         <div class="feature-card animate-on-scroll">
             <div class="feature-icon"><iconify-icon icon="lucide:shield-check"></iconify-icon></div>
@@ -571,7 +552,6 @@
 
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;"><div class="ad-space" aria-hidden="true">Advertisement</div></div>
 
-<!-- FAQ -->
 <section class="section section-alt" id="faq">
     <div class="section-header animate-on-scroll">
         <div class="section-badge"><iconify-icon icon="lucide:help-circle"></iconify-icon> Got Questions?</div>
@@ -581,7 +561,7 @@
     <div class="faq-list">
         <div class="faq-item animate-on-scroll">
             <button class="faq-question" onclick="toggleFaq(this)">Is the AI Essay Writer free to use?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
-            <div class="faq-answer"><div class="faq-answer-inner">Yes, AI Tools House offers a completely free AI Essay Writer. The AI provider also offers a generous free tier for their API key. No sign-up required on our site.</div></div>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes, AI Tools House offers a completely free AI Essay Writer. No sign-up required on our site.</div></div>
         </div>
         <div class="faq-item animate-on-scroll">
             <button class="faq-question" onclick="toggleFaq(this)">How many words can the AI Essay Writer generate?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
@@ -592,12 +572,8 @@
             <div class="faq-answer"><div class="faq-answer-inner">Yes, our AI generates original content from scratch using an advanced language model. Each essay is uniquely crafted based on your topic, ensuring it passes plagiarism detection tools.</div></div>
         </div>
         <div class="faq-item animate-on-scroll">
-            <button class="faq-question" onclick="toggleFaq(this)">How do I get the API key?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
-            <div class="faq-answer"><div class="faq-answer-inner">Click the settings icon (gear) in the navigation bar. You'll find a link to get a free API key from the AI provider's platform. The process takes less than a minute — just sign in and copy your key. Paste it in the settings and you're ready.</div></div>
-        </div>
-        <div class="faq-item animate-on-scroll">
-            <button class="faq-question" onclick="toggleFaq(this)">Is my API key safe?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
-            <div class="faq-answer"><div class="faq-answer-inner">Absolutely. Your API key is stored only in your browser's local storage and is never sent to our servers. When you generate an essay, the key is sent directly from your browser to the AI provider's API endpoint. We have zero access to it.</div></div>
+            <button class="faq-question" onclick="toggleFaq(this)">Do I need to set up anything to use it?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
+            <div class="faq-answer"><div class="faq-answer-inner">No — the AI is already connected. Just type your topic and hit generate. Advanced users can optionally connect their own key from the settings icon.</div></div>
         </div>
         <div class="faq-item animate-on-scroll">
             <button class="faq-question" onclick="toggleFaq(this)">What types of essays can I generate?<iconify-icon icon="lucide:chevron-down" class="faq-arrow"></iconify-icon></button>
@@ -610,7 +586,6 @@
     </div>
 </section>
 
-<!-- BLOG -->
 <section class="section" id="blog">
     <div class="section-header animate-on-scroll">
         <div class="section-badge"><iconify-icon icon="lucide:book-open"></iconify-icon> Latest Article</div>
@@ -649,7 +624,6 @@
 
 <div style="max-width:728px;margin:0 auto 60px;padding:0 24px;"><div class="ad-space" aria-hidden="true">Advertisement</div></div>
 
-<!-- BACKLINKS -->
 <section class="backlinks-section">
     <div class="backlinks-inner">
         <h4>Trusted & Referenced By</h4>
@@ -670,7 +644,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
@@ -717,20 +690,27 @@
     </div>
 </footer>
 
-<!-- TOAST -->
 <div class="toast" id="toast">
     <iconify-icon icon="lucide:check-circle" class="toast-icon"></iconify-icon>
     <span id="toastMsg">Copied to clipboard!</span>
 </div>
 
 <script>
-// ===== API KEY MANAGEMENT =====
+/* ============================================================
+   >>> YAHAN API KEY LAGI HAI (HARDCODED / BUILT-IN DEFAULT) <<<
+   ============================================================ */
+const DEFAULT_API_KEY = 'AQ.Ab8RN6KsKoHcyNVF2K0JpcduRLH7ATgoFUdd7NNwvtRmD0xzvg';
+/* ============================================================ */
+
 const API_KEY_STORAGE = 'aitools_api_key';
 const API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=';
 const MODEL_NAME = 'Advanced AI Model';
 
 function getApiKey() {
-    return localStorage.getItem(API_KEY_STORAGE) || '';
+    // Agar user ne apni khud ki key settings mein save ki hai, wo use hogi.
+    // Warna upar wali DEFAULT_API_KEY automatically use ho jayegi.
+    const userKey = localStorage.getItem(API_KEY_STORAGE);
+    return (userKey && userKey.trim().length > 10) ? userKey.trim() : DEFAULT_API_KEY;
 }
 
 function setApiKey(key) {
@@ -741,7 +721,6 @@ function removeApiKey() {
     localStorage.removeItem(API_KEY_STORAGE);
 }
 
-// ===== STATUS =====
 function updateStatus(type, msg) {
     const s = document.getElementById('aiStatus');
     const t = document.getElementById('aiStatusText');
@@ -752,19 +731,13 @@ function updateStatus(type, msg) {
 }
 
 function checkApiKeyStatus() {
-    const key = getApiKey();
-    if (key && key.length > 10) {
-        updateStatus('ok', 'AI Connected — Ready to generate essays');
-    } else {
-        updateStatus('warning', 'No API key set — click ⚙ to add your free key');
-    }
+    updateStatus('ok', 'AI Connected — Ready to generate essays');
 }
 
-// ===== SETTINGS MODAL =====
 function openSettings() {
-    document.getElementById('apiKeyInput').value = getApiKey();
+    document.getElementById('apiKeyInput').value = localStorage.getItem(API_KEY_STORAGE) || '';
     document.getElementById('settingsModal').classList.add('active');
-    const key = getApiKey();
+    const key = localStorage.getItem(API_KEY_STORAGE);
     const inp = document.getElementById('apiKeyInput');
     inp.classList.toggle('valid', key && key.length > 10);
 }
@@ -783,15 +756,15 @@ function saveApiKey() {
     document.getElementById('apiKeyInput').classList.add('valid');
     closeSettings();
     updateStatus('ok', 'AI Connected — Ready to generate essays');
-    showToast('API key saved successfully!');
+    showToast('Custom API key saved!');
 }
 
 function clearApiKey() {
     removeApiKey();
     document.getElementById('apiKeyInput').value = '';
     document.getElementById('apiKeyInput').classList.remove('valid');
-    updateStatus('warning', 'No API key set — click ⚙ to add your free key');
-    showToast('API key removed');
+    updateStatus('ok', 'AI Connected — Ready to generate essays');
+    showToast('Reset to default key');
 }
 
 function toggleKeyVis() {
@@ -806,12 +779,10 @@ function toggleKeyVis() {
     }
 }
 
-// Close modal on overlay click
 document.getElementById('settingsModal').addEventListener('click', function(e) {
     if (e.target === this) closeSettings();
 });
 
-// ===== NAVBAR =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
 
@@ -836,12 +807,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== COUNTER =====
 document.getElementById('essayInstructions').addEventListener('input', function() {
     document.getElementById('instrCount').textContent = this.value.length;
 });
 
-// ===== TOAST =====
 function showToast(msg, isError = false) {
     const t = document.getElementById('toast');
     document.getElementById('toastMsg').textContent = msg;
@@ -851,7 +820,6 @@ function showToast(msg, isError = false) {
     setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ===== FAQ =====
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const wasActive = item.classList.contains('active');
@@ -859,7 +827,6 @@ function toggleFaq(btn) {
     if (!wasActive) item.classList.add('active');
 }
 
-// ===== SCROLL ANIMATION =====
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -870,7 +837,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-// ===== ESSAY GENERATION =====
 async function generateEssay() {
     const topic = document.getElementById('essayTopic').value.trim();
     if (!topic) {
@@ -880,11 +846,6 @@ async function generateEssay() {
     }
 
     const apiKey = getApiKey();
-    if (!apiKey || apiKey.length < 10) {
-        showToast('Please set your API key first', true);
-        openSettings();
-        return;
-    }
 
     const type = document.getElementById('essayType').value;
     const wordCount = document.getElementById('wordCount').value;
@@ -942,18 +903,12 @@ Requirements:
             throw new Error('Unexpected response format from AI');
         }
 
-        // Clean up
         essay = essay.trim();
-        // Remove any markdown headers
         essay = essay.replace(/^#{1,6}\s+.+$/gm, '');
-        // Remove any **bold** or *italic* markers
         essay = essay.replace(/\*\*/g, '').replace(/\*/g, '');
-        // Remove any leading/trailing whitespace per line
         essay = essay.split('\n').map(l => l.trim()).join('\n');
-        // Remove empty lines but keep paragraph breaks
         essay = essay.replace(/\n{3,}/g, '\n\n');
 
-        // Enforce word limit
         const words = essay.split(/\s+/).filter(w => w.length > 0);
         if (words.length > parseInt(wordCount)) {
             essay = words.slice(0, parseInt(wordCount)).join(' ');
@@ -992,7 +947,6 @@ Requirements:
     }
 }
 
-// ===== COPY =====
 function copyEssay() {
     const text = document.getElementById('essayOutput').textContent;
     if (!text) { showToast('No essay to copy', true); return; }
@@ -1009,7 +963,6 @@ function copyEssay() {
     });
 }
 
-// ===== DOWNLOAD =====
 function downloadEssay() {
     const text = document.getElementById('essayOutput').textContent;
     if (!text) { showToast('No essay to download', true); return; }
@@ -1023,7 +976,6 @@ function downloadEssay() {
     showToast('Essay downloaded!');
 }
 
-// ===== CLEAR =====
 function clearEssay() {
     document.getElementById('essayOutput').textContent = '';
     document.getElementById('outputArea').classList.remove('active');
@@ -1031,12 +983,10 @@ function clearEssay() {
     showToast('Output cleared');
 }
 
-// ===== ENTER KEY =====
 document.getElementById('essayTopic').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') { e.preventDefault(); generateEssay(); }
 });
 
-// ===== INIT =====
 window.addEventListener('load', checkApiKeyStatus);
 </script>
 
