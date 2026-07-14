@@ -306,6 +306,15 @@
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
         .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
+        /* Typing cursor animation for output */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink-cursor 0.7s step-end infinite;
+            color: var(--green-500);
+            font-weight: 300;
+        }
+        @keyframes blink-cursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-toggle { display: block; }
@@ -373,7 +382,7 @@
             <button class="modal-close" onclick="closeSettings()"><iconify-icon icon="lucide:x"></iconify-icon></button>
         </div>
         <div class="modal-body">
-            <p>Ye tool ek built-in AI key ke saath already ready hai — bina kuch kiye generate kar sakte ho. Agar tum apni khud ki key use karna chahte ho (recommended for production), niche daal do — wo built-in key ko override kar degi.</p>
+            <p>This tool comes with a built-in AI key ready to go. If you want to use your own key (recommended for production), enter it below to override the default.</p>
             <div class="api-input-wrap">
                 <input type="password" id="apiKeyInput" class="api-input" placeholder="AIzaSy... (optional override)" autocomplete="off" spellcheck="false">
                 <button class="toggle-vis" onclick="toggleKeyVis()" title="Show/hide key"><iconify-icon icon="lucide:eye" id="eyeIcon"></iconify-icon></button>
@@ -382,7 +391,7 @@
                 <button class="modal-save" onclick="saveApiKey()">Save Key</button>
                 <button class="modal-clear" onclick="clearApiKey()">Reset to Default</button>
             </div>
-            <p class="modal-hint">Apni free key <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a> se le sakte ho.</p>
+            <p class="modal-hint">Get your free key from <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.</p>
         </div>
     </div>
 </div>
@@ -413,7 +422,7 @@
             <div class="tool-header-icon"><iconify-icon icon="lucide:pen-tool"></iconify-icon></div>
             <div>
                 <h2>AI Essay Writer</h2>
-                <p>Generate essays up to 1000 words — powered by advanced AI</p>
+                <p>Generate essays up to 1000 words — powered by Gemini AI</p>
             </div>
         </div>
         <div class="tool-body">
@@ -537,7 +546,7 @@
         </div>
         <div class="feature-card animate-on-scroll">
             <div class="feature-icon"><iconify-icon icon="lucide:gauge"></iconify-icon></div>
-            <div><h4>Real AI Generation</h4><p>Powered by a state-of-the-art large language model. Real AI-generated content, not templates or pre-written text.</p></div>
+            <div><h4>Real AI Generation</h4><p>Powered by Google Gemini — a state-of-the-art large language model. Real AI-generated content, not templates.</p></div>
         </div>
         <div class="feature-card animate-on-scroll">
             <div class="feature-icon"><iconify-icon icon="lucide:globe"></iconify-icon></div>
@@ -602,286 +611,242 @@
         <h3 itemprop="headline">The Future of AI Writing Tools: How AI is Transforming Essay Writing in 2026</h3>
         <p itemprop="description">Artificial intelligence has fundamentally changed the way students, educators, and professionals approach writing. In 2026, AI writing tools are no longer a novelty — they are an essential part of the modern writing workflow. From generating initial outlines to polishing final drafts, these tools have become indispensable companions for anyone who writes regularly.</p>
         <h4>The Rise of AI-Powered Writing Assistants</h4>
-        <p>The journey of AI writing tools began with simple grammar checkers, but today's technology is remarkably sophisticated. Modern AI essay writers can understand context, maintain logical coherence across thousands of words, and adapt their writing style to match specific requirements. At AI Tools House, our free AI Essay Writer represents the cutting edge of what is possible in 2026.</p>
-        <h4>Key Benefits for Students and Writers</h4>
-        <p>AI writing tools offer several compelling advantages that have driven their widespread adoption across the globe:</p>
+        <p>The journey of AI writing tools began with simple grammar checkers, but today's technology is remarkably sophisticated. Modern AI models can understand context, nuance, and tone at a level that was unimaginable just a few years ago. They can generate coherent, well-structured essays that follow academic conventions, cite relevant concepts, and maintain a consistent voice throughout.</p>
+        <blockquote>The most important skill in 2026 isn't writing from scratch — it's knowing how to guide AI to produce your best possible work, then refining it with your own voice.</blockquote>
+        <h4>Key Trends Shaping AI Essay Writing</h4>
         <ul>
-            <li><strong>Speed and Efficiency:</strong> What once took hours can now be accomplished in seconds. AI tools generate complete essay drafts instantly, allowing writers to focus on refinement.</li>
-            <li><strong>Quality Improvement:</strong> Advanced AI models produce well-structured content with proper grammar, varied sentence structures, and coherent arguments.</li>
-            <li><strong>Accessibility:</strong> Free tools like ours eliminate financial barriers, making quality writing assistance available to students worldwide.</li>
-            <li><strong>Learning Opportunity:</strong> By studying AI-generated essays, students can learn about essay structure, argumentation techniques, and effective writing patterns.</li>
-            <li><strong>Overcoming Writer's Block:</strong> AI tools provide the initial momentum that many writers need, turning paralysis into productivity.</li>
+            <li><strong>Real-time collaboration:</strong> AI tools now work alongside writers in real-time, suggesting improvements as you type rather than generating entire documents at once.</li>
+            <li><strong>Multilingual capabilities:</strong> Leading AI writing tools can generate, translate, and adapt essays across 50+ languages with near-native fluency.</li>
+            <li><strong>Research integration:</strong> Advanced tools can synthesize information from multiple sources, helping writers build evidence-based arguments quickly.</li>
+            <li><strong>Personalization:</strong> AI models learn individual writing styles over time, producing content that increasingly matches the user's unique voice.</li>
+            <li><strong>Ethical AI writing:</strong> New frameworks and detection tools are making it easier to use AI responsibly, with transparent attribution and proper academic guidelines.</li>
         </ul>
-        <h4>How AI Essay Writing Works in 2026</h4>
-        <p>Today's AI essay writers use large language models trained on vast datasets of academic writing, literature, and educational content. When you enter a topic, the AI analyzes the subject, identifies relevant themes and arguments, and constructs a complete essay with an introduction, body paragraphs with supporting evidence, and a conclusion. The best tools allow users to customize the essay type, word count, and tone.</p>
-        <blockquote>"AI writing tools are not replacing human creativity — they are amplifying it. The best results come from a collaboration between human insight and AI capability."</blockquote>
-        <h4>Ethical Considerations and Best Practices</h4>
-        <p>While AI writing tools are incredibly powerful, it is important to use them responsibly. The consensus among educators in 2026 is that AI tools are valuable for brainstorming, outlining, and learning, but submitted work should reflect the student's own understanding and voice. We encourage all users to treat generated content as a starting point and a learning resource.</p>
-        <h4>What Lies Ahead</h4>
-        <p>The future of AI writing tools is even more exciting. We are working on features like real-time collaboration between human and AI, multi-language essay generation, subject-specific expertise modes, and integration with popular document editors. Try our free AI Essay Writer today and experience the future of writing.</p>
+        <h4>The Impact on Education</h4>
+        <p>Educational institutions are adapting rapidly. Rather than banning AI tools outright, forward-thinking schools and universities are integrating them into their curricula. Students are being taught to use AI as a brainstorming partner, a research assistant, and a drafting tool — while still developing their own critical thinking and writing skills.</p>
+        <p>The most successful approach appears to be a blended model: AI handles the heavy lifting of initial draft generation and structural organization, while students focus on analysis, fact-checking, argument refinement, and adding personal insights that make the essay truly their own.</p>
+        <h4>What This Means for You</h4>
+        <p>Whether you're a student facing a tight deadline, a professional drafting a report, or a creative writer exploring new ideas, AI writing tools like the one on this page represent a powerful addition to your toolkit. The key is to use them wisely — as assistants that amplify your capabilities, not replacements for your own thinking and creativity.</p>
+        <p>The future of writing isn't about humans versus machines. It's about humans and machines working together to produce better writing than either could alone. And that future is already here.</p>
     </article>
 </section>
 
-<div style="max-width:728px;margin:0 auto 60px;padding:0 24px;"><div class="ad-space" aria-hidden="true">Advertisement</div></div>
-
-<section class="backlinks-section">
+<div class="backlinks-section">
     <div class="backlinks-inner">
-        <h4>Trusted & Referenced By</h4>
+        <h4>Trusted Resources</h4>
         <div class="backlinks-grid">
-            <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Wikipedia AI</a>
-            <a href="https://www.education.gov" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Education.gov</a>
-            <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> arXiv Research</a>
-            <a href="https://www.who.int" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> WHO Official</a>
-            <a href="https://www.unesco.org" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> UNESCO</a>
-            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Google Scholar</a>
-            <a href="https://www.nytimes.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> NY Times</a>
-            <a href="https://www.theguardian.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> The Guardian</a>
-            <a href="https://www.techcrunch.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> TechCrunch</a>
-            <a href="https://openai.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> OpenAI</a>
-            <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> MDN Web Docs</a>
-            <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer nofollow" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Nature Journal</a>
+            <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Google AI Studio</a>
+            <a href="#" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> AI Writing Guide</a>
+            <a href="#" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Essay Tips 2026</a>
+            <a href="#" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Plagiarism Checker</a>
+            <a href="#" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Grammar Tools</a>
+            <a href="#" class="backlink"><iconify-icon icon="lucide:external-link"></iconify-icon> Study Resources</a>
         </div>
     </div>
-</section>
+</div>
 
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <a href="#" class="logo"><div class="logo-icon"><iconify-icon icon="lucide:brain-circuit"></iconify-icon></div> AI Tools <span>House</span></a>
-            <p>Your go-to destination for free AI-powered writing tools. Generate high-quality essays, articles, and content instantly.</p>
+            <a href="#" class="logo">
+                <div class="logo-icon"><iconify-icon icon="lucide:brain-circuit"></iconify-icon></div>
+                AI Tools <span>House</span>
+            </a>
+            <p>Free AI-powered tools for students, educators, and professionals. Generate high-quality content instantly with no sign-up required.</p>
         </div>
         <div>
             <h5>Tools</h5>
             <ul class="footer-links">
                 <li><a href="#tools">AI Essay Writer</a></li>
                 <li><a href="#">AI Paragraph Generator</a></li>
-                <li><a href="#">AI Rewriter Tool</a></li>
-                <li><a href="#">AI Grammar Checker</a></li>
+                <li><a href="#">AI Outline Maker</a></li>
+                <li><a href="#">AI Thesis Generator</a></li>
             </ul>
         </div>
         <div>
             <h5>Resources</h5>
             <ul class="footer-links">
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#">Sitemap</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#">Writing Tips</a></li>
+                <li><a href="#">API Documentation</a></li>
             </ul>
         </div>
         <div>
-            <h5>Legal</h5>
+            <h5>Company</h5>
             <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Disclaimer</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>© 2026 AI Tools House. All rights reserved.</span>
+        <span>&copy; 2026 AI Tools House. All rights reserved.</span>
         <div class="footer-social">
-            <a href="#" aria-label="Twitter"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
-            <a href="#" aria-label="Facebook"><iconify-icon icon="lucide:facebook"></iconify-icon></a>
-            <a href="#" aria-label="LinkedIn"><iconify-icon icon="lucide:linkedin"></iconify-icon></a>
-            <a href="#" aria-label="YouTube"><iconify-icon icon="lucide:youtube"></iconify-icon></a>
-            <a href="#" aria-label="Instagram"><iconify-icon icon="lucide:instagram"></iconify-icon></a>
+            <a href="https://twitter.com/aitoolshouse" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
+            <a href="https://facebook.com/aitoolshouse" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><iconify-icon icon="lucide:facebook"></iconify-icon></a>
+            <a href="https://linkedin.com/company/aitoolshouse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><iconify-icon icon="lucide:linkedin"></iconify-icon></a>
+            <a href="https://youtube.com/@aitoolshouse" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><iconify-icon icon="lucide:youtube"></iconify-icon></a>
         </div>
     </div>
 </footer>
 
 <div class="toast" id="toast">
     <iconify-icon icon="lucide:check-circle" class="toast-icon"></iconify-icon>
-    <span id="toastMsg">Copied to clipboard!</span>
+    <span id="toastText">Copied to clipboard!</span>
 </div>
 
 <script>
-/* ============================================================
-   >>> YAHAN API KEY LAGI HAI (HARDCODED / BUILT-IN DEFAULT) <<<
-   ============================================================ */
-const DEFAULT_API_KEY = 'AQ.Ab8RN6KsKoHcyNVF2K0JpcduRLH7ATgoFUdd7NNwvtRmD0xzvg';
-/* ============================================================ */
+// ============================================
+// Configuration — Built-in Gemini API Key
+// ============================================
+const BUILT_IN_API_KEY = 'AQ.Ab8RN6KsKoHcyNVF2K0JpcduRLH7ATgoFUdd7NNwvtRmD0xzvg';
+const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const API_KEY_STORAGE = 'aitools_api_key';
-const API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=';
-const MODEL_NAME = 'Advanced AI Model';
+// ============================================
+// State
+// ============================================
+let isGenerating = false;
+let currentEssayText = '';
 
+// ============================================
+// Get active API key (user override or built-in)
+// ============================================
 function getApiKey() {
-    // Agar user ne apni khud ki key settings mein save ki hai, wo use hogi.
-    // Warna upar wali DEFAULT_API_KEY automatically use ho jayegi.
-    const userKey = localStorage.getItem(API_KEY_STORAGE);
-    return (userKey && userKey.trim().length > 10) ? userKey.trim() : DEFAULT_API_KEY;
+    const saved = localStorage.getItem('aitools_api_key');
+    return saved || BUILT_IN_API_KEY;
 }
 
-function setApiKey(key) {
-    localStorage.setItem(API_KEY_STORAGE, key);
-}
+// ============================================
+// API Status Check
+// ============================================
+async function checkApiStatus() {
+    const statusEl = document.getElementById('aiStatus');
+    const statusText = document.getElementById('aiStatusText');
+    const settingsBtn = document.getElementById('settingsBtn');
 
-function removeApiKey() {
-    localStorage.removeItem(API_KEY_STORAGE);
-}
+    try {
+        const key = getApiKey();
+        const response = await fetch(`${GEMINI_URL}?key=${key}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: 'Reply with only: OK' }] }],
+                generationConfig: { maxOutputTokens: 10 }
+            })
+        });
 
-function updateStatus(type, msg) {
-    const s = document.getElementById('aiStatus');
-    const t = document.getElementById('aiStatusText');
-    s.className = 'ai-status' + (type !== 'ok' ? ' ' + type : '');
-    t.textContent = msg;
-    const btn = document.getElementById('settingsBtn');
-    btn.classList.toggle('active', type === 'warning');
-}
-
-function checkApiKeyStatus() {
-    updateStatus('ok', 'AI Connected — Ready to generate essays');
-}
-
-function openSettings() {
-    document.getElementById('apiKeyInput').value = localStorage.getItem(API_KEY_STORAGE) || '';
-    document.getElementById('settingsModal').classList.add('active');
-    const key = localStorage.getItem(API_KEY_STORAGE);
-    const inp = document.getElementById('apiKeyInput');
-    inp.classList.toggle('valid', key && key.length > 10);
-}
-
-function closeSettings() {
-    document.getElementById('settingsModal').classList.remove('active');
-}
-
-function saveApiKey() {
-    const key = document.getElementById('apiKeyInput').value.trim();
-    if (!key) {
-        showToast('Please enter an API key', true);
-        return;
-    }
-    setApiKey(key);
-    document.getElementById('apiKeyInput').classList.add('valid');
-    closeSettings();
-    updateStatus('ok', 'AI Connected — Ready to generate essays');
-    showToast('Custom API key saved!');
-}
-
-function clearApiKey() {
-    removeApiKey();
-    document.getElementById('apiKeyInput').value = '';
-    document.getElementById('apiKeyInput').classList.remove('valid');
-    updateStatus('ok', 'AI Connected — Ready to generate essays');
-    showToast('Reset to default key');
-}
-
-function toggleKeyVis() {
-    const inp = document.getElementById('apiKeyInput');
-    const icon = document.getElementById('eyeIcon');
-    if (inp.type === 'password') {
-        inp.type = 'text';
-        icon.setAttribute('icon', 'lucide:eye-off');
-    } else {
-        inp.type = 'password';
-        icon.setAttribute('icon', 'lucide:eye');
-    }
-}
-
-document.getElementById('settingsModal').addEventListener('click', function(e) {
-    if (e.target === this) closeSettings();
-});
-
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
-
-function toggleMobile() {
-    const menu = document.getElementById('mobileMenu');
-    const icon = document.getElementById('menuIcon');
-    menu.classList.toggle('active');
-    icon.setAttribute('icon', menu.classList.contains('active') ? 'lucide:x' : 'lucide:menu');
-}
-function closeMobile() {
-    document.getElementById('mobileMenu').classList.remove('active');
-    document.getElementById('menuIcon').setAttribute('icon', 'lucide:menu');
-}
-
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
-});
-
-document.getElementById('essayInstructions').addEventListener('input', function() {
-    document.getElementById('instrCount').textContent = this.value.length;
-});
-
-function showToast(msg, isError = false) {
-    const t = document.getElementById('toast');
-    document.getElementById('toastMsg').textContent = msg;
-    t.classList.toggle('error', isError);
-    t.querySelector('.toast-icon').setAttribute('icon', isError ? 'lucide:alert-circle' : 'lucide:check-circle');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-function toggleFaq(btn) {
-    const item = btn.parentElement;
-    const wasActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!wasActive) item.classList.add('active');
-}
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            observer.unobserve(entry.target);
+        if (response.ok) {
+            statusEl.className = 'ai-status';
+            statusText.textContent = 'AI connected and ready — powered by Gemini';
+            settingsBtn.classList.remove('active');
+        } else {
+            const errData = await response.json().catch(() => ({}));
+            const errMsg = errData?.error?.message || 'Unknown error';
+            if (response.status === 400 || response.status === 403) {
+                statusEl.className = 'ai-status error';
+                statusText.textContent = 'API key invalid — click settings to update your key';
+                settingsBtn.classList.add('active');
+            } else if (response.status === 429) {
+                statusEl.className = 'ai-status warning';
+                statusText.textContent = 'Rate limited — please wait a moment before generating';
+            } else {
+                statusEl.className = 'ai-status warning';
+                statusText.textContent = 'AI may have issues — try generating or update your key';
+                settingsBtn.classList.add('active');
+            }
         }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    } catch (e) {
+        statusEl.className = 'ai-status warning';
+        statusText.textContent = 'Could not reach AI — check your internet connection';
+        settingsBtn.classList.add('active');
+    }
+}
 
+// ============================================
+// Build the essay prompt
+// ============================================
+function buildPrompt(topic, type, words, tone, instructions) {
+    let prompt = `You are an expert academic essay writer. Write a ${type} essay on the following topic:\n\n"${topic}"\n\n`;
+    prompt += `Requirements:\n`;
+    prompt += `- Essay type: ${type}\n`;
+    prompt += `- Approximate word count: ${words} words (aim for this length, do not exceed by more than 10%)\n`;
+    prompt += `- Tone: ${tone}\n`;
+    prompt += `- Structure: Include a clear introduction with a thesis statement, well-organized body paragraphs with evidence and examples, and a strong conclusion.\n`;
+    prompt += `- Quality: Use precise vocabulary, smooth transitions between paragraphs, and maintain a consistent voice throughout.\n`;
+    prompt += `- Originality: Generate completely original content — do not copy from any source.\n`;
+
+    if (instructions && instructions.trim()) {
+        prompt += `- Additional instructions: ${instructions.trim()}\n`;
+    }
+
+    prompt += `\nWrite the essay now. Do not include any meta-commentary, headings like "Introduction" or "Conclusion" (unless appropriate for the essay type), or any formatting other than standard paragraph breaks. Start directly with the essay content.`;
+
+    return prompt;
+}
+
+// ============================================
+// Generate Essay — Main Function
+// ============================================
 async function generateEssay() {
+    if (isGenerating) return;
+
     const topic = document.getElementById('essayTopic').value.trim();
+    const type = document.getElementById('essayType').value;
+    const words = document.getElementById('wordCount').value;
+    const tone = document.getElementById('essayTone').value;
+    const instructions = document.getElementById('essayInstructions').value.trim();
+
+    // Validate topic
     if (!topic) {
-        showToast('Please enter an essay topic', true);
+        showToast('Please enter an essay topic first.', true);
         document.getElementById('essayTopic').focus();
         return;
     }
 
-    const apiKey = getApiKey();
+    if (topic.length < 5) {
+        showToast('Topic is too short — please provide at least 5 characters.', true);
+        document.getElementById('essayTopic').focus();
+        return;
+    }
 
-    const type = document.getElementById('essayType').value;
-    const wordCount = document.getElementById('wordCount').value;
-    const tone = document.getElementById('essayTone').value;
-    const instructions = document.getElementById('essayInstructions').value.trim();
-
+    isGenerating = true;
     const btn = document.getElementById('generateBtn');
+    const outputArea = document.getElementById('outputArea');
+    const outputBox = document.getElementById('essayOutput');
+    const outputWords = document.getElementById('outputWords');
+    const statusEl = document.getElementById('aiStatus');
+    const statusText = document.getElementById('aiStatusText');
+
+    // UI: loading state
     btn.classList.add('loading');
     btn.disabled = true;
-    updateStatus('ok', 'AI is generating your essay...');
+    outputArea.classList.add('active');
+    outputBox.textContent = '';
+    outputBox.classList.add('typing-cursor');
+    outputWords.textContent = '';
+    statusEl.className = 'ai-status';
+    statusText.textContent = 'Generating your essay with Gemini AI...';
 
-    const prompt = `Write a ${type} essay of approximately ${wordCount} words on the topic: "${topic}".
+    const prompt = buildPrompt(topic, type, words, tone, instructions);
+    const apiKey = getApiKey();
 
-Requirements:
-- Essay type: ${type}
-- Tone: ${tone}
-- Word count: approximately ${wordCount} words (STRICT LIMIT — do not exceed ${wordCount} words under any circumstances)
-- Structure: Clear introduction with thesis, multiple body paragraphs with evidence and analysis, and a strong conclusion
-- Writing quality: Well-structured paragraphs, coherent arguments, smooth transitions, varied sentence structures
-- Do NOT include any titles, headings (like "Introduction", "Body", "Conclusion"), subheadings, or bullet points
-- Write the essay as continuous prose paragraphs only — no formatting, no markdown, no lists
-- Do NOT write any preamble, explanation, or meta-text before or after the essay
-- Start immediately with the first sentence of the essay
- ${instructions ? `- Additional instructions: ${instructions}` : ''}`;
+    // Calculate max tokens based on word count (1 word ~ 1.3 tokens)
+    const maxTokens = Math.min(Math.ceil(parseInt(words) * 1.5), 8192);
 
     try {
-        const response = await fetch(API_ENDPOINT + apiKey, {
+        const response = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
                 generationConfig: {
-                    temperature: 0.7,
+                    temperature: 0.8,
                     topP: 0.95,
                     topK: 40,
-                    maxOutputTokens: Math.ceil(parseInt(wordCount) * 1.5),
+                    maxOutputTokens: maxTokens
                 }
             })
         });
@@ -893,101 +858,336 @@ Requirements:
         }
 
         const data = await response.json();
+        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-        let essay = '';
-        if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
-            essay = data.candidates[0].content.parts.map(p => p.text).join('');
-        } else if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-            essay = data.candidates[0].content.text || '';
-        } else {
-            throw new Error('Unexpected response format from AI');
+        if (!text || !text.trim()) {
+            throw new Error('AI returned empty content. Please try again.');
         }
 
-        essay = essay.trim();
-        essay = essay.replace(/^#{1,6}\s+.+$/gm, '');
-        essay = essay.replace(/\*\*/g, '').replace(/\*/g, '');
-        essay = essay.split('\n').map(l => l.trim()).join('\n');
-        essay = essay.replace(/\n{3,}/g, '\n\n');
+        // Typing animation
+        await typeText(outputBox, text.trim());
 
-        const words = essay.split(/\s+/).filter(w => w.length > 0);
-        if (words.length > parseInt(wordCount)) {
-            essay = words.slice(0, parseInt(wordCount)).join(' ');
-            if (!essay.endsWith('.')) essay += '.';
-        }
+        currentEssayText = text.trim();
+        const wordCount = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+        outputWords.textContent = `${wordCount} words generated`;
 
-        if (!essay || essay.length < 20) {
-            throw new Error('AI returned empty or too short response');
-        }
-
-        document.getElementById('essayOutput').textContent = essay;
-        const finalCount = essay.split(/\s+/).filter(w => w.length > 0).length;
-        document.getElementById('outputWords').textContent = `Word count: ${finalCount} words | Generated by ${MODEL_NAME}`;
-        document.getElementById('outputArea').classList.add('active');
-        document.getElementById('outputArea').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-        updateStatus('ok', `AI Connected — Essay generated (${finalCount} words)`);
+        statusEl.className = 'ai-status';
+        statusText.textContent = 'Essay generated successfully — powered by Gemini AI';
         showToast('Essay generated successfully!');
 
     } catch (error) {
-        console.error('AI Error:', error);
-        let userMsg = error.message || 'Unknown error';
-        if (userMsg.includes('API_KEY_INVALID') || userMsg.includes('401') || userMsg.includes('PERMISSION')) {
-            userMsg = 'Invalid API key — please check your key in settings';
-            updateStatus('error', 'Invalid API key — click ⚙ to update');
-        } else if (userMsg.includes('429') || userMsg.includes('RESOURCE_EXHAUSTED') || userMsg.includes('QUOTA')) {
-            userMsg = 'API quota exceeded — please wait a moment or check your plan';
-            updateStatus('error', 'Rate limited — please wait and try again');
+        outputBox.textContent = '';
+        outputBox.classList.remove('typing-cursor');
+        currentEssayText = '';
+
+        statusEl.className = 'ai-status error';
+        statusText.textContent = `Error: ${error.message}`;
+
+        if (error.message.includes('API key') || error.message.includes('403') || error.message.includes('400')) {
+            outputBox.textContent = 'The API key appears to be invalid or has expired. Please click the settings icon (gear) in the top-right corner to update your API key. You can get a free key from Google AI Studio.';
+            document.getElementById('settingsBtn').classList.add('active');
+        } else if (error.message.includes('429') || error.message.includes('quota')) {
+            outputBox.textContent = 'The AI is currently rate-limited. Please wait 30-60 seconds and try again. If this persists, consider using your own API key in settings.';
+        } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+            outputBox.textContent = 'Network error — please check your internet connection and try again.';
         } else {
-            updateStatus('error', 'Error: ' + userMsg.substring(0, 80));
+            outputBox.textContent = `Generation failed: ${error.message}\n\nPlease try again or update your API key in settings.`;
         }
-        showToast(userMsg, true);
+
+        showToast('Failed to generate essay.', true);
+
     } finally {
+        isGenerating = false;
         btn.classList.remove('loading');
         btn.disabled = false;
+        outputBox.classList.remove('typing-cursor');
     }
 }
 
+// ============================================
+// Typing Animation
+// ============================================
+function typeText(element, text) {
+    return new Promise((resolve) => {
+        let i = 0;
+        const speed = Math.max(3, Math.min(15, 3000 / text.length)); // Adaptive speed
+        element.textContent = '';
+
+        function type() {
+            if (i < text.length) {
+                // Add characters in chunks for speed
+                const chunk = Math.ceil(text.length / 200);
+                const end = Math.min(i + chunk, text.length);
+                element.textContent += text.substring(i, end);
+                i = end;
+                element.scrollTop = element.scrollHeight;
+                requestAnimationFrame(() => setTimeout(type, speed));
+            } else {
+                resolve();
+            }
+        }
+        type();
+    });
+}
+
+// ============================================
+// Copy Essay
+// ============================================
 function copyEssay() {
-    const text = document.getElementById('essayOutput').textContent;
-    if (!text) { showToast('No essay to copy', true); return; }
-    navigator.clipboard.writeText(text).then(() => {
-        showToast('Copied to clipboard!');
+    if (!currentEssayText) {
+        showToast('No essay to copy.', true);
+        return;
+    }
+    navigator.clipboard.writeText(currentEssayText).then(() => {
+        showToast('Essay copied to clipboard!');
     }).catch(() => {
+        // Fallback
         const ta = document.createElement('textarea');
-        ta.value = text;
+        ta.value = currentEssayText;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
         document.body.appendChild(ta);
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast('Copied to clipboard!');
+        showToast('Essay copied to clipboard!');
     });
 }
 
+// ============================================
+// Download Essay as .txt
+// ============================================
 function downloadEssay() {
-    const text = document.getElementById('essayOutput').textContent;
-    if (!text) { showToast('No essay to download', true); return; }
+    if (!currentEssayText) {
+        showToast('No essay to download.', true);
+        return;
+    }
     const topic = document.getElementById('essayTopic').value.trim() || 'essay';
-    const blob = new Blob([text], { type: 'text/plain' });
+    const type = document.getElementById('essayType').value;
+    const filename = `${topic.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').substring(0, 50)}_${type}.txt`;
+
+    const blob = new Blob([currentEssayText], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `${topic.replace(/[^a-z0-9]/gi, '_')}_essay.txt`;
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
     showToast('Essay downloaded!');
 }
 
+// ============================================
+// Clear Essay
+// ============================================
 function clearEssay() {
+    currentEssayText = '';
     document.getElementById('essayOutput').textContent = '';
+    document.getElementById('outputWords').textContent = '';
     document.getElementById('outputArea').classList.remove('active');
-    checkApiKeyStatus();
-    showToast('Output cleared');
+    showToast('Output cleared.');
 }
 
-document.getElementById('essayTopic').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); generateEssay(); }
+// ============================================
+// Settings Modal
+// ============================================
+function openSettings() {
+    const modal = document.getElementById('settingsModal');
+    const input = document.getElementById('apiKeyInput');
+    const saved = localStorage.getItem('aitools_api_key');
+    input.value = saved || '';
+    if (saved) input.classList.add('valid');
+    else input.classList.remove('valid');
+    modal.classList.add('active');
+    setTimeout(() => input.focus(), 200);
+}
+
+function closeSettings() {
+    document.getElementById('settingsModal').classList.remove('active');
+}
+
+function saveApiKey() {
+    const input = document.getElementById('apiKeyInput');
+    const key = input.value.trim();
+    if (key) {
+        localStorage.setItem('aitools_api_key', key);
+        input.classList.add('valid');
+        showToast('Custom API key saved!');
+    } else {
+        showToast('Please enter a valid API key.', true);
+        return;
+    }
+    closeSettings();
+    checkApiStatus();
+}
+
+function clearApiKey() {
+    localStorage.removeItem('aitools_api_key');
+    document.getElementById('apiKeyInput').value = '';
+    document.getElementById('apiKeyInput').classList.remove('valid');
+    showToast('Reset to built-in key.');
+    closeSettings();
+    checkApiStatus();
+}
+
+function toggleKeyVis() {
+    const input = document.getElementById('apiKeyInput');
+    const icon = document.getElementById('eyeIcon');
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.setAttribute('icon', 'lucide:eye-off');
+    } else {
+        input.type = 'password';
+        icon.setAttribute('icon', 'lucide:eye');
+    }
+}
+
+// Close modal on overlay click
+document.getElementById('settingsModal').addEventListener('click', function(e) {
+    if (e.target === this) closeSettings();
 });
 
-window.addEventListener('load', checkApiKeyStatus);
+// Close modal on Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSettings();
+        closeMobile();
+    }
+});
+
+// ============================================
+// Mobile Menu
+// ============================================
+function toggleMobile() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+    menu.classList.toggle('active');
+    if (menu.classList.contains('active')) {
+        icon.setAttribute('icon', 'lucide:x');
+    } else {
+        icon.setAttribute('icon', 'lucide:menu');
+    }
+}
+
+function closeMobile() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+    menu.classList.remove('active');
+    icon.setAttribute('icon', 'lucide:menu');
+}
+
+// ============================================
+// FAQ Toggle
+// ============================================
+function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasActive = item.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+    // Toggle clicked
+    if (!wasActive) item.classList.add('active');
+}
+
+// ============================================
+// Toast Notification
+// ============================================
+let toastTimeout;
+function showToast(message, isError) {
+    const toast = document.getElementById('toast');
+    const text = document.getElementById('toastText');
+    const icon = toast.querySelector('.toast-icon');
+
+    text.textContent = message;
+    toast.classList.remove('error');
+    if (isError) {
+        toast.classList.add('error');
+        icon.setAttribute('icon', 'lucide:alert-circle');
+    } else {
+        icon.setAttribute('icon', 'lucide:check-circle');
+    }
+
+    clearTimeout(toastTimeout);
+    toast.classList.add('show');
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ============================================
+// Navbar Scroll Effect
+// ============================================
+let lastScroll = 0;
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    const scrollY = window.scrollY;
+    if (scrollY > 20) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    lastScroll = scrollY;
+}, { passive: true });
+
+// ============================================
+// Active Nav Link on Scroll
+// ============================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+    });
+}, { rootMargin: '-40% 0px -60% 0px' });
+
+sections.forEach(section => navObserver.observe(section));
+
+// ============================================
+// Scroll Animations (Intersection Observer)
+// ============================================
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            // Stagger the animations slightly
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 80);
+            scrollObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
+
+// ============================================
+// Instruction Character Counter
+// ============================================
+document.getElementById('essayInstructions').addEventListener('input', function() {
+    document.getElementById('instrCount').textContent = this.value.length;
+});
+
+// ============================================
+// Enter key on topic input triggers generate
+// ============================================
+document.getElementById('essayTopic').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !isGenerating) {
+        e.preventDefault();
+        generateEssay();
+    }
+});
+
+// ============================================
+// Initialize on page load
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Check API status after a short delay
+    setTimeout(checkApiStatus, 800);
+});
 </script>
 
 </body>
